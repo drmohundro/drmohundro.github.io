@@ -13,66 +13,68 @@ Everything works great if your panel isn't going to resize itself. You can just 
 
 Here's some code to get you started:
 
-    Public Class Form1
-      Private WithEvents flowPanel As New FlowLayoutPanel()
+{% highlight vbnet %}
+Public Class Form1
+  Private WithEvents flowPanel As New FlowLayoutPanel()
 
-      Public Sub New()
-        ' This call is required by the Windows Form Designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        ' DON'T FORGET THESE LINES!
-        flowPanel.Dock = DockStyle.Fill
-        flowPanel.FlowDirection = FlowDirection.TopDown
-        Me.Controls.Add(flowPanel)
-        AddListView()
-        AddListView()
-      End Sub
+  Public Sub New()
+    ' This call is required by the Windows Form Designer.
+    InitializeComponent()
+    ' Add any initialization after the InitializeComponent() call.
+    ' DON'T FORGET THESE LINES!
+    flowPanel.Dock = DockStyle.Fill
+    flowPanel.FlowDirection = FlowDirection.TopDown
+    Me.Controls.Add(flowPanel)
+    AddListView()
+    AddListView()
+  End Sub
 
-      Private Sub AddListView()
-        Dim totalList As New ListView()
-        totalList.View = View.Details
+  Private Sub AddListView()
+    Dim totalList As New ListView()
+    totalList.View = View.Details
 
-        ' If first control, then set a width; otherwise, Dock.Fill it.
-        If Me.flowPanel.Controls.Count > 0 Then
-          totalList.Dock = DockStyle.Fill
-        Else
-          totalList.Width = Me.flowPanel.Width - 10
-        End If
+    ' If first control, then set a width; otherwise, Dock.Fill it.
+    If Me.flowPanel.Controls.Count > 0 Then
+      totalList.Dock = DockStyle.Fill
+    Else
+      totalList.Width = Me.flowPanel.Width - 10
+    End If
 
-        totalList.Columns.AddRange(New ColumnHeader() _
-          {GetColumnHeader("Col 1"), _
-          GetColumnHeader("Col 2"), _
-          GetColumnHeader("Col 3")})
+    totalList.Columns.AddRange(New ColumnHeader() _
+      {GetColumnHeader("Col 1"), _
+      GetColumnHeader("Col 2"), _
+      GetColumnHeader("Col 3")})
 
-        Dim item As ListViewItem = totalList.Items.Add("Row 1")
-        item.SubItems.Add("1234.00")
-        item.SubItems.Add("5678.00")
-        item = totalList.Items.Add("Row 1")
-        item.SubItems.Add("1234.00")
-        item.SubItems.Add("5678.00")
-        item = totalList.Items.Add("Row 1")
-        item.SubItems.Add("1234.00")
-        item.SubItems.Add("5678.00")
+    Dim item As ListViewItem = totalList.Items.Add("Row 1")
+    item.SubItems.Add("1234.00")
+    item.SubItems.Add("5678.00")
+    item = totalList.Items.Add("Row 1")
+    item.SubItems.Add("1234.00")
+    item.SubItems.Add("5678.00")
+    item = totalList.Items.Add("Row 1")
+    item.SubItems.Add("1234.00")
+    item.SubItems.Add("5678.00")
 
-        Me.flowPanel.Controls.Add(totalList)
-      End Sub
+    Me.flowPanel.Controls.Add(totalList)
+  End Sub
 
-      Private Function GetColumnHeader(ByVal text As String) As ColumnHeader
-        Dim col As New ColumnHeader()
-        col.Text = text
-        Return col
-      End Function
+  Private Function GetColumnHeader(ByVal text As String) As ColumnHeader
+    Dim col As New ColumnHeader()
+    col.Text = text
+    Return col
+  End Function
 
-      Private Sub flow_Layout(ByVal sender As Object, _
-        ByVal e As System.Windows.Forms.LayoutEventArgs) _
-        Handles flowPanel.Layout
+  Private Sub flow_Layout(ByVal sender As Object, _
+    ByVal e As System.Windows.Forms.LayoutEventArgs) _
+    Handles flowPanel.Layout
 
-        Dim flowLayout As FlowLayoutPanel = DirectCast(sender, FlowLayoutPanel)
-        If flowLayout.Controls.Count > 0 Then
-          flowLayout.Controls(0).Width = flowLayout.Width - 10
-        End If
-      End Sub
-    End Class
+    Dim flowLayout As FlowLayoutPanel = DirectCast(sender, FlowLayoutPanel)
+    If flowLayout.Controls.Count > 0 Then
+      flowLayout.Controls(0).Width = flowLayout.Width - 10
+    End If
+  End Sub
+End Class
+{% endhighlight %}
 
 Here's MSDN [another article](http://msdn2.microsoft.com/en-us/library/z9w7ek2f.aspx) that gives some basic information on the `FlowLayoutPanel`.
 

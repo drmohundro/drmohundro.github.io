@@ -13,25 +13,27 @@ What research I came up with looked like I would have to create my own custom de
 
 Here's a code snippet to give you an idea of what I did:
 
-    <Designer(GetType(AutoResizeGroupBoxDesigner))> _
-    Public Class AutoResizeGroupBox
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Content)> _
-        Public ReadOnly Property FlowPanel() As FlowLayoutPanel
-            Get
-                ' Where _flowPanel has already been added to the designer
-                Return _flowPanel
-            End Get
-        End Property
+{% highlight vbnet %}
+<Designer(GetType(AutoResizeGroupBoxDesigner))> _
+Public Class AutoResizeGroupBox
+    <DesignerSerializationVisibility(DesignerSerializationVisibility.Content)> _
+    Public ReadOnly Property FlowPanel() As FlowLayoutPanel
+        Get
+            ' Where _flowPanel has already been added to the designer
+            Return _flowPanel
+        End Get
+    End Property
 
-        ' code snipped...
-    End Class
+    ' code snipped...
+End Class
 
-    Public Class AutoResizeGroupBoxDesigner
-        Inherits ControlDesigner
-        Public Overrides Sub Initialize(ByVal component As System.ComponentModel.IComponent)
-            MyBase.Initialize(component)
-            Dim autoGroupBox As AutoResizeGroupBox = DirectCast(component, AutoResizeGroupBox)
-            EnableDesignMode(autoGroupBox.FlowPanel, "FlowPanel")
-        End Sub
-    End Class
+Public Class AutoResizeGroupBoxDesigner
+    Inherits ControlDesigner
+    Public Overrides Sub Initialize(ByVal component As System.ComponentModel.IComponent)
+        MyBase.Initialize(component)
+        Dim autoGroupBox As AutoResizeGroupBox = DirectCast(component, AutoResizeGroupBox)
+        EnableDesignMode(autoGroupBox.FlowPanel, "FlowPanel")
+    End Sub
+End Class
+{% endhighlight %}
 

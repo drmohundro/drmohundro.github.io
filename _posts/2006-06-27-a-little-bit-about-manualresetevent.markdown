@@ -9,63 +9,71 @@ I'm not sure how often people run into situations where the ManualResetEvent is 
 
 It is easiest to explain with some code snippets. Here's how you create the ManualResetEvent.
 
-    Private dataLock As New ManualResetEvent(False)
+{% highlight vbnet %}
+Private dataLock As New ManualResetEvent(False)
+{% endhighlight %}
 
 To wait on the signal, use this code:
 
-    _dataLock.WaitOne()
+{% highlight vbnet %}
+_dataLock.WaitOne()
+{% endhighlight %}
 
 Once your background work is completed, you can call Set like so:
 
-    _dataLock.Set()
+{% highlight vbnet %}
+_dataLock.Set()
+{% endhighlight %}
 
 Here's a full code sample that shows how it would work and also gives a short example on the BackgroundWorker.
 
-    Imports System.ComponentModel
-    Imports System.ThreadingModule Module1
+{% highlight vbnet %}
+Imports System.ComponentModel
+Imports System.ThreadingModule Module1
 
-    Private _dataLock As New ManualResetEvent(False)
+Private _dataLock As New ManualResetEvent(False)
 
-    Sub Main()
+Sub Main()
 
-      Thread.CurrentThread.Name = "[Main]"
+  Thread.CurrentThread.Name = "[Main]"
 
-      Dim wkr As New BackgroundWorker
-      AddHandler wkr.DoWork, AddressOf wkr_DoWork
-      AddHandler wkr.RunWorkerCompleted, AddressOf wkr_RunWorkerCompleted
+  Dim wkr As New BackgroundWorker
+  AddHandler wkr.DoWork, AddressOf wkr_DoWork
+  AddHandler wkr.RunWorkerCompleted, AddressOf wkr_RunWorkerCompleted
 
-      wkr.RunWorkerAsync("Get to work!")
+  wkr.RunWorkerAsync("Get to work!")
 
-      Write("Waiting on the lock...")
-      _dataLock.WaitOne()
-      Write("we're back!")
+  Write("Waiting on the lock...")
+  _dataLock.WaitOne()
+  Write("we're back!")
 
-      Console.WriteLine(vbNewLine & "Press any key to continue...")
-      Console.ReadLine()
-    End Sub
+  Console.WriteLine(vbNewLine & "Press any key to continue...")
+  Console.ReadLine()
+End Sub
 
-    Private Sub wkr_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs)
-      Thread.CurrentThread.Name = "[Work]"
+Private Sub wkr_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs)
+  Thread.CurrentThread.Name = "[Work]"
 
-      Write("DoWork just received this value: " & CStr(e.Argument))
-      Thread.Sleep(5000)
+  Write("DoWork just received this value: " & CStr(e.Argument))
+  Thread.Sleep(5000)
 
-      e.Result = "DoWork finished!"
+  e.Result = "DoWork finished!"
 
-      Write("DoWork is done so start signaling completion.")
-      _dataLock.Set()
-    End Sub
+  Write("DoWork is done so start signaling completion.")
+  _dataLock.Set()
+End Sub
 
-    Private Sub wkr_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
-      Dim wkr As BackgroundWorker = DirectCast(sender, BackgroundWorker)
-      RemoveHandler wkr.DoWork, AddressOf wkr_DoWork
-      RemoveHandler wkr.RunWorkerCompleted, AddressOf wkr_RunWorkerCompleted
-      wkr.Dispose()
-    End Sub
+Private Sub wkr_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+  Dim wkr As BackgroundWorker = DirectCast(sender, BackgroundWorker)
+  RemoveHandler wkr.DoWork, AddressOf wkr_DoWork
+  RemoveHandler wkr.RunWorkerCompleted, AddressOf wkr_RunWorkerCompleted
+  wkr.Dispose()
+End Sub
 
-    Private Sub Write(ByVal s As String)
-      Console.WriteLine(String.Format("Thread: {0}, Message: {1}", Thread.CurrentThread.Name, s))
-    End Sub
+Private Sub Write(ByVal s As String)
+  Console.WriteLine(String.Format("Thread: {0}, Message: {1}", Thread.CurrentThread.Name, s))
+End Sub
+{% endhighlight %}
 
 The output from running looks like this:
 
@@ -73,7 +81,7 @@ The output from running looks like this:
     Thread: [Work], Message: DoWork just received this value: Get to work!
     Thread: [Work], Message: DoWork is done so start signaling completion.
     Thread: [Main], Message: we're back!
-    
+
     Press any key to continue...
 
 One thing to remember: do NOT put the call to Set (i.e. \_dataLock.Set()) in the thread where you are waiting (i.e. \_dataLock.WaitOne())! You'll never get the signal because that thread is already blocking! Because of this, make sure your call to Set always happens in the DoWork event of the BackgroundWorker instead of the RunWorkerCompleted event.

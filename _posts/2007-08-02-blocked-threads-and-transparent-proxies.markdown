@@ -9,53 +9,59 @@ category: blog
 
 Given this:
 
-    delegate void WorkDelegate();
-    interface ISomeInterface
-    {
-      void Execute();
-    }
+{% highlight csharp %}
+delegate void WorkDelegate();
+interface ISomeInterface
+{
+  void Execute();
+}
+{% endhighlight %}
 
 What is the difference between this class
 
-    class TestCaseOne
-    {
-      ISomeInterface something = Activator.GetObject(typeof(ISomeInterface), 
-        "http://some.url.com/") as ISomeInterface;
+{% highlight csharp %}
+class TestCaseOne
+{
+  ISomeInterface something = Activator.GetObject(typeof(ISomeInterface),
+    "http://some.url.com/") as ISomeInterface;
 
-      public TestCaseOne()
-      {
-        BackgroundWorker wkr = new BackgroundWorker();
-        wkr.DoWork += new DoWorkEventHandler(wkr_DoWork);
-        wkr.RunWorkerAsync();
-      }
+  public TestCaseOne()
+  {
+    BackgroundWorker wkr = new BackgroundWorker();
+    wkr.DoWork += new DoWorkEventHandler(wkr_DoWork);
+    wkr.RunWorkerAsync();
+  }
 
-      void wkr_DoWork(object sender, DoWorkEventArgs e)
-      {
-        something.Execute();
-      }
-    }
+  void wkr_DoWork(object sender, DoWorkEventArgs e)
+  {
+    something.Execute();
+  }
+}
+{% endhighlight %}
 
 and this class?
 
-    class TestCaseTwo
-    {
-      ISomeInterface something = Activator.GetObject(typeof(ISomeInterface), 
-        "http://some.url.com/") as ISomeInterface;
+{% highlight csharp %}
+class TestCaseTwo
+{
+  ISomeInterface something = Activator.GetObject(typeof(ISomeInterface),
+    "http://some.url.com/") as ISomeInterface;
 
-      public TestCaseTwo()
-      {
-        WorkDelegate dlg = new WorkDelegate(something.Execute);
-        dlg.BeginInvoke(MyCallback, new object[] { dlg });
-      }
+  public TestCaseTwo()
+  {
+    WorkDelegate dlg = new WorkDelegate(something.Execute);
+    dlg.BeginInvoke(MyCallback, new object[] { dlg });
+  }
 
-      private void MyCallback(IAsyncResult iar)
-      {
-        object[] asyncState = iar.AsyncState as object[];
-        WorkDelegate dlg = asyncState[0] as WorkDelegate;
+  private void MyCallback(IAsyncResult iar)
+  {
+    object[] asyncState = iar.AsyncState as object[];
+    WorkDelegate dlg = asyncState[0] as WorkDelegate;
 
-        dlg.EndInvoke(iar);
-      }
-    }
+    dlg.EndInvoke(iar);
+  }
+}
+{% endhighlight %}
 
 Both classes have a field named something that is a reference to an HTTP remoting proxy that has been published at [http://some.url.com](http://some.url.com). Let's assume that the the HTTP Remoting configuration has already been set up. Both call the Execute method defined on the interface, but one is using a BackgroundWorker for threading and the other is using the BeginInvoke/EndInvoke means of threading. Big deal, right?
 

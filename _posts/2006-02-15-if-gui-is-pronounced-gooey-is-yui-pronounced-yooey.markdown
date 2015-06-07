@@ -9,13 +9,17 @@ For those two or three who missed it, [Yahoo! released two libraries yesterday](
 
 __*__ Instead of:
 
-    var newObject = new function () {
-      this.name = value;
-    }
+{% highlight javascript %}
+var newObject = new function () {
+  this.name = value;
+}
+{% endhighlight %}
 
 It is:
 
-    var newObject = {
-      name: value;
-    }
+{% highlight javascript %}
+var newObject = {
+  name: value;
+}
+{% endhighlight %}
 

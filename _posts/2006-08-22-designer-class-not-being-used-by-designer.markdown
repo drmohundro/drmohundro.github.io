@@ -9,20 +9,24 @@ In one of my projects at work, I ran into a situation where Visual Studio 2005 d
 
 Open up the project file (which in my case was GUI.vbproj) in a text editor and do a search for your Designer file. You should see some tags that look like this:
 
-    <Compile Include="CustomControl.Designer.vb">
-    </Compile>
-    <Compile Include="CustomControl.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+{% highlight xml %}
+<Compile Include="CustomControl.Designer.vb">
+</Compile>
+<Compile Include="CustomControl.vb">
+  <SubType>UserControl</SubType>
+</Compile>
+{% endhighlight %}
 
 Now, what it SHOULD look like is this:
 
-    <Compile Include="CustomControl.Designer.vb">
-      <DependentUpon>CustomControl.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControl.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+{% highlight xml %}
+<Compile Include="CustomControl.Designer.vb">
+  <DependentUpon>CustomControl.vb</DependentUpon>
+</Compile>
+<Compile Include="CustomControl.vb">
+  <SubType>UserControl</SubType>
+</Compile>
+{% endhighlight %}
 
 Basically, my project file, for whatever reason, was missing the &lt;DependentUpon&gt; tag. If you add that back, Visual Studio should start behaving as expected again.
 

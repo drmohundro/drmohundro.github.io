@@ -13,61 +13,65 @@ Compare the following VB.NET code and C# code:
 
 VB.NET :
 
-    Module Module1
-      Sub Main()
-        Dim tests As New List(Of Test)
-        tests.Add(New Test("test"))
-        tests.Add(New Test("test2"))
-        tests.Add(New Test("test3"))
+{% highlight vbnet %}
+Module Module1
+  Sub Main()
+    Dim tests As New List(Of Test)
+    tests.Add(New Test("test"))
+    tests.Add(New Test("test2"))
+    tests.Add(New Test("test3"))
 
-        toSearchFor = "test2"
-        Console.WriteLine(tests.Find(AddressOf FindTest).ID)
-      End Sub
+    toSearchFor = "test2"
+    Console.WriteLine(tests.Find(AddressOf FindTest).ID)
+  End Sub
 
-      Private toSearchFor As String = ""
-        Private Function FindTest(ByVal val As Test) As Boolean
-        Return val.ID = toSearchFor
-      End Function
+  Private toSearchFor As String = ""
+    Private Function FindTest(ByVal val As Test) As Boolean
+    Return val.ID = toSearchFor
+  End Function
 
-      Private Class Test
-        Public ID As String
-        Public Sub New(ByVal id As String)
-          Me.ID = id
-        End Sub
-      End Class
-    End Module
+  Private Class Test
+    Public ID As String
+    Public Sub New(ByVal id As String)
+      Me.ID = id
+    End Sub
+  End Class
+End Module
+{% endhighlight %}
 
 C# :
 
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+{% highlight csharp %}
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-    namespace CSPredicateExample
+namespace CSPredicateExample
+{
+  class Program
+  {
+    static void Main(string[] args)
     {
-      class Program
+      List<Test> tests = new List<Test>();
+      tests.Add(new Test("test"));
+      tests.Add(new Test("test2"));
+      tests.Add(new Test("test3"));
+
+      string toSearchFor = "test2";
+      Console.WriteLine(tests.Find(delegate(Test val) { return val.ID == toSearchFor; }).ID);
+    }
+
+    class Test
+    {
+      public string ID;
+      public Test(string id)
       {
-        static void Main(string[] args)
-        {
-          List<Test> tests = new List<Test>();
-          tests.Add(new Test("test"));
-          tests.Add(new Test("test2"));
-          tests.Add(new Test("test3"));
-
-          string toSearchFor = "test2";
-          Console.WriteLine(tests.Find(delegate(Test val) { return val.ID == toSearchFor; }).ID);
-        }
-
-        class Test
-        {
-          public string ID;
-          public Test(string id)
-          {
-            this.ID = id;
-          }
-        }
+        this.ID = id;
       }
     }
+  }
+}
+{% endhighlight %}
 
 Because of features like this, I am really looking forward to the next release of VB. Of course, with LINQ, will I even care about predicates then?
 

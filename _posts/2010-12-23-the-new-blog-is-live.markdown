@@ -71,19 +71,21 @@ Redirecting my old URLs to the new URL format turned out to be easy for
 called rack-rewrite.
 
 The below code snippet accounted for the easy 80%.
-    
-    r301 %r{/blog/
-      (\d{4})/  # year
-      (\d{2})/  # month
-      (\d{2})/  # day
-      (\w+?)    # slug
-      \.aspx$}x, lambda { |match, rack_env|
 
-      helper = RedirectHelper.new
+{% highlight ruby %}
+r301 %r{/blog/
+  (\d{4})/  # year
+  (\d{2})/  # month
+  (\d{2})/  # day
+  (\w+?)    # slug
+  \.aspx$}x, lambda { |match, rack_env|
 
-      year, month, day, slug = match[1], match[2], match[3], helper.convert_legacy_slug(match[4])
-      "/blog/#{year}/#{month}/#{day}/#{slug}/"
-    }
+  helper = RedirectHelper.new
+
+  year, month, day, slug = match[1], match[2], match[3], helper.convert_legacy_slug(match[4])
+  "/blog/#{year}/#{month}/#{day}/#{slug}/"
+}
+{% endhighlight %}
 
 I just used a fairly simple regex to parse the old format out and move
 it over to the new format. I did end up building a RedirectHelper class

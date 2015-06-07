@@ -11,31 +11,33 @@ What I came up with was basically a GroupValidator class that took a control and
 
 Here's an example of usage:
 
-    Public Class Form1
-      Private _validator As New GroupValidator()
+{% highlight vbnet %}
+Public Class Form1
+  Private _validator As New GroupValidator()
 
-      Public Sub New()
-        ' This call is required by the Windows Form Designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        _validator.AddControl(Me.TextBox1, AddressOf IsTextValid, "Text not valid")
-        _validator.AddControl(Me.TextBox2, AddressOf IsTextValid, "Test not valid2")
-        _validator.AddControl(Me.TextBox3, AddressOf IsTextValid, "Enter something")
-        _validator.AddControl(Me.TextBox4, AddressOf IsTextValid, "Please")
-      End Sub
+  Public Sub New()
+    ' This call is required by the Windows Form Designer.
+    InitializeComponent()
+    ' Add any initialization after the InitializeComponent() call.
+    _validator.AddControl(Me.TextBox1, AddressOf IsTextValid, "Text not valid")
+    _validator.AddControl(Me.TextBox2, AddressOf IsTextValid, "Test not valid2")
+    _validator.AddControl(Me.TextBox3, AddressOf IsTextValid, "Enter something")
+    _validator.AddControl(Me.TextBox4, AddressOf IsTextValid, "Please")
+  End Sub
 
-      Private Function IsTextValid(ByVal c As Control) As Boolean
-        If c.Text.Length > 0 Then
-          Return True
-        Else
-          Return False
-        End If
-      End Function
+  Private Function IsTextValid(ByVal c As Control) As Boolean
+    If c.Text.Length > 0 Then
+      Return True
+    Else
+      Return False
+    End If
+  End Function
 
-      Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        MessageBox.Show(_validator.IsValid.ToString)
-      End Sub
-    End Class
+  Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    MessageBox.Show(_validator.IsValid.ToString)
+  End Sub
+End Class
+{% endhighlight %}
 
 It is pretty simple as you can see. If you're interested in the code, drop a line and I'll email it or post it.
 
