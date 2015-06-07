@@ -23,16 +23,16 @@ def parse_post(contents)
   post = ''
 
   contents.each_line do |line|
-    if !first_line_parsed
+    unless first_line_parsed
       first_line_parsed = true
       next
     end
 
     case line
     when /^title:\s+"?(.+?)"?$/
-      front_matter << "title: \"#{$1.strip}\"\n"
+      front_matter << "title: \"#{Regexp.last_match[1].strip}\"\n"
     when /^date:\s+(.+?)$/
-      front_matter << "date: #{$1.strip}\n"
+      front_matter << "date: #{Regexp.last_match[1].strip}\n"
     end
 
     if !front_matter_parsed && line.chomp == ''
@@ -42,11 +42,11 @@ def parse_post(contents)
     if front_matter_parsed
       case line
       when /^```(.+)$/
-        post << "{% highlight #{map_parsers($1)} %}\n"
+        post << "{% highlight #{map_parsers(Regexp.last_match[1])} %}\n"
       when /^```$/
         post << "{% endhighlight %}\n"
       else
-        post << line.gsub("\t", "  ")
+        post << line.gsub("\t", '  ')
       end
     end
   end
@@ -64,5 +64,5 @@ def map_parsers(in_syntax)
   }
 
   mapped = map[in_syntax.to_sym]
-  mapped == nil ? in_syntax : mapped
+  mapped.nil? ? in_syntax : mapped
 end
