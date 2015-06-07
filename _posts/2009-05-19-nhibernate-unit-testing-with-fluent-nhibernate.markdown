@@ -11,21 +11,21 @@ I was curious how hard it would be port his example over to Fluent NHibernate. N
 
 Here's the Blog entity I used, which is based on the usage I saw from Ayende's post:
 
-{% gist drmohundro/114239 %}
+<script src="http://gist.github.com/drmohundro/114239.js"></script>
 
 And here is the mapping:
 
-{% gist drmohundro/114241 %}
+<script src="http://gist.github.com/drmohundro/114241.js"></script>
 
 As you can see, it is pretty straight forward so far. The next piece of code is the Fluent NHibernate implementation of Ayende's InMemoryDatabaseTest.
 
-{% gist drmohundro/114242 %}
+<script src="http://gist.github.com/drmohundro/114242.js"></script>
 
 There aren't too many differences really. We're using the same SchemaExport, but we do need to call ExposeConfiguration so that we can store off a reference to the Configuration to be used by the SchemaExport instance.
 
 The final piece, the actual test itself, is identical to Ayende's example, except that I'm using MbUnit instead of xUnit:
 
-{% gist drmohundro/114244 %}
+<script src="http://gist.github.com/drmohundro/114244.js"></script>
 
 Nice and easy! I like it!
 
