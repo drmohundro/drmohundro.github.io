@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "A simple lesson using type converters"
-author: David
 date: 2007/08/22
-categories: .net;programming
-guid: 1e085afc-dd2e-495a-b544-40641cf5118a
+category: blog
+---
 
 I found myself writing the following code this evening:
 

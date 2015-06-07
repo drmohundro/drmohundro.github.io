@@ -1,6 +1,9 @@
---- 
-title: Introducing Daila Joy!
+---
+layout: post
+title: "Introducing Daila Joy!"
 date: 2011/06/24
+category: blog
+---
 
 The Mohundro family has some big news... our first child was just born a
 couple of weeks ago! Both mother and daughter are doing great!

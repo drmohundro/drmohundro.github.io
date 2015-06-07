@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Haven't heard about PowerShell yet? And you'll be in the Little Rock area this week, too???"
-author: David
 date: 2009/07/12
-categories: powershell;speaking
-guid: 52efd93d-5ac0-48ff-aea2-29dad51890ef
+category: blog
+---
 
 If you seriously still haven't heard or used PowerShell yet, come to my Little Rock DNUG presentation on the topic on Monday, July 13. Or, if you're busy Monday night because you're going to hear [Keith Elder](http://keithelder.net/blog/) speak on Velocity to the [Fort Smith DNUG](http://fsdnug.org/), then come Tuesday night to hear me give my PowerShell presentation to the Conway DNUG instead! 
 

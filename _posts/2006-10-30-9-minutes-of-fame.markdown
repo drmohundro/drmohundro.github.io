@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "9 Minutes of Fame?"
-author: David
 date: 2006/10/30
-categories: general
-guid: fbc41bf4-057c-45a6-bf83-bfdddca15370
+category: blog
+---
 
 I'm having my first 9 minutes of fame... ever! 
 

@@ -1,6 +1,9 @@
 ---
-title: Exploring Swift with SWXMLHash
+layout: post
+title: "Exploring Swift with SWXMLHash"
 date: 2014/07/21
+category: blog
+---
 
 Over the last month or so, I've been playing around with Swift, the new language that Apple unveiled at WWDC this year. Thus far, I've really enjoyed it. To get started with learning it, I thought I'd convert one of our iOS applications at work over to Swift from Objective-C. I'm only doing it in my spare time, so it might never get published, but I've learned a lot since starting.
 
@@ -20,23 +23,23 @@ While researching and reading up on Swift, I came across the [SwiftyJSON](https:
 
 For example, given the following JSON...
 
-```json
+{% highlight json %}
 {
-	"title": "Swifty Example",
-	"user": {
-	"login": "drmohundro",
-	"type": "User",
-	"site_admin": false
-	}
+  "title": "Swifty Example",
+  "user": {
+  "login": "drmohundro",
+  "type": "User",
+  "site_admin": false
+  }
 }
-```
+{% endhighlight %}
 
 It could read values out like so...
 
-```swift
+{% highlight swift %}
 let title = json["title"].string?
 let isAdmin = json["user"]["site_admin"].bool?
-```
+{% endhighlight %}
 
 What's especially fascinating (to me) is that the library represents each value (an instance of `JSONValue`) as an enum. Swift's enums are *far* more powerful than they are in the CLR. CLR enums are basically fancy wrappers around integers. Swift enums can represent any type, whether it be an int, float, string, or custom type.
 
@@ -54,43 +57,43 @@ It isn't complete by any means, but it does fully support array and dictionary i
 
 Given the following XML (which is a snippet of the [sample XML from MSDN's XML sample!](http://msdn.microsoft.com/en-us/library/ms762271\(v=vs.85\).aspx))...
 
-```xml
+{% highlight xml %}
 <root>
-	<header>
-		<title>Test Title Header</title>
-	</header>
-	<catalog>
-		<book id=\"bk101\">
-			<author>Gambardella, Matthew</author>
-			<title>XML Developer's Guide</title>
-			<genre>Computer</genre>
-			<price>44.95</price>
-			<publish_date>2000-10-01</publish_date>
-			<description>An in-depth look at creating applications with XML.</description>
-		</book>
-		<book id=\"bk102\">
-			<author>Ralls, Kim</author>
-			<title>Midnight Rain</title>
-			<genre>Fantasy</genre>
-			<price>5.95</price>
-			<publish_date>2000-12-16</publish_date>
-			<description>A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.</description>
-		</book>
-		<book id=\"bk103\">
-			<author>Corets, Eva</author>
-			<title>Maeve Ascendant</title>
-			<genre>Fantasy</genre>
-			<price>5.95</price>
-			<publish_date>2000-11-17</publish_date>
-			<description>After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.</description>
-		</book>
-	</catalog>
+  <header>
+    <title>Test Title Header</title>
+  </header>
+  <catalog>
+    <book id=\"bk101\">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications with XML.</description>
+    </book>
+    <book id=\"bk102\">
+      <author>Ralls, Kim</author>
+      <title>Midnight Rain</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+      <description>A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.</description>
+    </book>
+    <book id=\"bk103\">
+      <author>Corets, Eva</author>
+      <title>Maeve Ascendant</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-11-17</publish_date>
+      <description>After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.</description>
+    </book>
+  </catalog>
 </root>
-```
+{% endhighlight %}
 
 The following parsing options are allowed...
 
-```swift
+{% highlight swift %}
 // begin parsing
 let xml = SWXMLHash.parse(xmlToParse)
 
@@ -105,7 +108,7 @@ xml["root"]["catalog"]["book"][1].element?.attributes["id"]
 
 // will return "Computer, Fantasy, Fantasy"
 ", ".join(xml["root"]["catalog"]["book"].all.map { elem in elem["genre"].element!.text! })
-```
+{% endhighlight %}
 
 There is still quite a bit of work to be done, but it does give me everything I need to parse the XML returned from my SOAP calls for now.
 

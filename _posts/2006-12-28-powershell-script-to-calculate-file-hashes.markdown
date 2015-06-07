@@ -1,22 +1,22 @@
-
+---
+layout: post
 title: "PowerShell script to calculate file hashes"
-author: David
 date: 2006/12/28
-categories: powershell
-guid: b3e7081f-8249-4e37-a777-9afdfd0d9b3d
+category: blog
+---
 
 **UPDATE NUMBER 2:**
 
 Kevin commented about a flaw in my script wherein it would keep files open until the PowerShell process was closed - a scenario I should've tested but, in all of the excitement (ha), I missed. You won't believe what the problem was, either. I forgot parentheses on my `$inStream.Close()` method (it looked like $inStream.Close instead of $inStream.Close**()** ). The reason the trap { } script block didn't catch it is because the statement was still valid... it would just display the MethodInfo like below:
 
-```no-highlight
+{% highlight text %}
 MemberType          : Method
 OverloadDefinitions : {System.Void Close()}
 TypeNameOfValue     : System.Management.Automation.PSMethod
 Value               : System.Void Close()
 Name                : Close
 IsInstance          : True
-```
+{% endhighlight %}
 
 The `[void]` statement before it prevented the output from displaying, hence me not catching the bug. The script has now been fixed (hopefully). Thanks for the catch Kevin!
 
@@ -30,7 +30,7 @@ Jeffrey Snover posted a suggestion on the [PowerShell blog](http://blogs.msdn.co
 
 Here is Calc-Hash.ps1:
 
-```powershell
+{% highlight powershell %}
 param (
   [string] $inFile = $(throw "Usage: Calc-Hash.ps1 file.txt [sha1|md5] "),
   [string] $hashType = "sha1"
@@ -89,4 +89,4 @@ function Main
 }
 
 . Main
-```
+{% endhighlight %}

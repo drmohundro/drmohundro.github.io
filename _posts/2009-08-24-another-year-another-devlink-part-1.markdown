@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Another year, another devLink (part 1)"
-author: David
 date: 2009/08/24
-categories: conferences
-guid: 1e522746-a4aa-4eed-8635-de77bb093d58
+category: blog
+---
 
 I've now attended [devLink](http://devlink.net) three times, with each time
 getting progressively better. This year marked the first time for devLink to be

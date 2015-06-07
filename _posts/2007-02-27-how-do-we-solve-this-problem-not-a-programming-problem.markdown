@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "How do we solve this problem? (not a programming problem!)"
-author: David
 date: 2007/02/27
-categories: general
-guid: 0be21ea5-418e-43c7-afdd-b45cd9663277
+category: blog
+---
 
 Jeff Atwood posted a [great article talking about programmers that can't actually program](http://www.codinghorror.com/blog/archives/000781.html).
 

@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "The new version of Rhino.Mocks is awesome!"
-author: David
 date: 2007/10/26
-categories: .net;unit testing
-guid: 229a31c9-83fc-4849-9724-247201101568
+category: blog
+---
 
 Ayende is the man. Seriously. 
 

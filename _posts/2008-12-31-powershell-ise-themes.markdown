@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "PowerShell ISE Themes!"
-author: David
 date: 2008/12/31
-categories: powershell
-guid: ce805e6f-dd3f-4ff1-8264-f3d43dc06215
+category: blog
+---
 
 Last week, the PowerShell team released PowerShell v2 CTP3. And, of course, there was much rejoicing. I've got quite a bit I'd like to blog about regarding PowerShell, but I couldn't wait to share one feature I love. 
 
@@ -23,7 +23,7 @@ The [$psISE variable offers up a wealth of options](http://blogs.msdn.com/powers
 
 Looks different, eh? Below is the code to get it to work:
 
-```powershell
+{% highlight powershell %}
 # PowerShell ISE version of the VIM blackboard theme at 
 # http://www.vim.org/scripts/script.php?script_id=2280
 
@@ -61,13 +61,13 @@ $psISE.Options.TokenColors['Variable'] = '#FF00D42D'
 $psISE.Options.TokenColors['CommandParameter'] = '#FFFFDE00'
 $psISE.Options.TokenColors['CommandArgument'] = '#FFFFFFFF'
 $psISE.Options.TokenColors['Number'] = '#FF98FE1E'
-```
+{% endhighlight %}
 
 To use it, I just dot the script into my PowerShell ISE profile (see the $profile variable while in PowerShell ISE) like so (where ./Themes/blackboard.ps1 is the path to the blackboard theme):
 
-```powershell
+{% highlight powershell %}
 . ./Themes/blackboard.ps1
-```
+{% endhighlight %}
 
 The script is a conversion I did of the [vim blackboard theme which itself is a clone of the blackboard theme from TextMate](http://www.vim.org/scripts/script.php?script_id=2280). I'm sure it could use some tweaking, but it works for me for now.
 

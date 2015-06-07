@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Dialogue from Airplane"
-author: David
 date: 2007/08/10
-categories: general
-guid: 7fb172a5-b1cd-46ce-88a7-8cf589176eae
+category: blog
+---
 
 For your enjoyment, here is some great dialogue from the movie [Airplane](http://www.imdb.com/title/tt0080339/). Why am I providing this? Because it is funny and because I wanted to. 
 

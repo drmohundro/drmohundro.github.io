@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Standard Feed Icons"
-author: David
 date: 2006/03/18
-categories: general
-guid: 4dedebbf-9b54-48e5-bb2e-c920d25af0af
+category: blog
+---
 
 As some of you may have noticed, I changed my blog's theme ever so slightly to encorporate the cool, orange feed icon:
 

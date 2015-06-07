@@ -1,6 +1,9 @@
 ---
-title: Easy Date Math with PowerShell
+layout: post
+title: "Easy Date Math with PowerShell"
 date: 2013/02/05
+category: blog
+---
 
 Date math is hard... at least for me. My brain has trouble thinking in terms
 of dates. I probably overanalyze things, but if you say something like "let's
@@ -21,7 +24,7 @@ stress.
 
 So, I turn to PowerShell. Behold, the `Get-DevLunchDays.ps1` script:
 
-```powershell
+{% highlight powershell %}
 $initialDate = [datetime]'2013/1/8'
 
 $rollingDate = $initialDate
@@ -30,7 +33,7 @@ do {
     Write-Host $rollingDate.ToShortDateString()
     $rollingDate = $rollingDate.AddDays(21)
 } until ($rollingDate -ge [datetime]'2013/12/31')
-```
+{% endhighlight %}
 
 I've hardcoded an initial date in the `$initialDate` variable and then I just
 script out the rest. Sure, it's simple, but it saves me time and stress!

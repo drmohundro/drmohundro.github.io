@@ -1,6 +1,9 @@
---- 
-title: Chrome OS Cr-48 Review
+---
+layout: post
+title: "Chrome OS Cr-48 Review"
 date: 2010/12/30
+category: blog
+---
 
 Surely you've heard of the [Chrome OS](http://www.google.com/chromeos/) by
 now? If not, well, Chrome OS is a new operating system from Google that

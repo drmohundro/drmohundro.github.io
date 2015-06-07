@@ -1,21 +1,21 @@
-title: "Find in files with PowerShell"
-author: David
+---
+layout: post
 date: 2006/11/06
-categories: powershell
-guid: ec5e386a-5eba-4473-b553-e5e4350e0404
+category: blog
+---
 
 I haven't posted anything on PowerShell in a while so here's something that's
 useful. 
 
-```powershell
+{% highlight powershell %}
 Get-ChildItem -Recurse -Include *.* | Select-String "text to search for"
-```
+{% endhighlight %}
 
 Or, if you like things a little more abbreviated, try this: 
 
-```powershell
+{% highlight powershell %}
 dir -r -i *.* | Select-String "text to search for"
-```
+{% endhighlight %}
 
 Select-String is a cmdlet that will search files or strings, sort of like grep
 in Unix or findstr in cmd.exe. If you use the Get-ChildItem cmdlet, you can
@@ -33,15 +33,15 @@ the Get-ChildItem command and piping the output to Select-String.
 Before I began using PowerShell, I had been using a small cmd file called
 ff.cmd that used the following: 
 
-```dos
+{% highlight batch %}
 findstr /p /s /i /c:%1 %2
-```
+{% endhighlight %}
 
 Then I could type things like: 
 
-```dos
+{% highlight batch %}
 ff "text to search for" .\*.*
-```
+{% endhighlight %}
 
 But PowerShell is so much cooler now :-)
 

@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "How I Got Started in Programming"
-author: David
 date: 2008/07/15
-categories: general;programming
-guid: f205cc06-a0da-43a9-adb9-4ba749106451
+category: blog
+---
 
 [Brian Sullivan](http://www.sullivansoftdev.com/blog/) [tagged me with the
 latest ongoing

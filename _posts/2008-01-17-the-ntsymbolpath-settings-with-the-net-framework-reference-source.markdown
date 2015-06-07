@@ -1,19 +1,19 @@
-
+---
+layout: post
 title: "The _NT_SYMBOL_PATH settings with the .NET Framework reference source"
-author: David
 date: 2008/01/17
-categories: visual studio
-guid: 69fe8594-ab51-4f32-9531-a05d5398ce40
+category: blog
+---
 
 I couldn't find this information anywhere (yet), so I thought I'd share this. If you're already using the `_NT_SYMBOL_PATH` setting to download symbols from Microsoft and you want to download the symbols and source for the .NET Framework, you can set the environment variable up like so:
 
 Variable name:
 
-	\_NT\_SYMBOL_PATH
+  \_NT\_SYMBOL_PATH
 
 Variable value:
 
-	srv\*c:\symbols\*__http://referencesource.microsoft.com/symbols__\*http://msdl.microsoft.com/download/symbols
+  srv\*c:\symbols\*__http://referencesource.microsoft.com/symbols__\*http://msdl.microsoft.com/download/symbols
 
 Replace `c:\symbols` with whatever path you want your symbols to be downloaded to. The key here is that the reference source path exists first. Otherwise, the PDBs will be downloaded with the source information stripped.
 

@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "More on the FlowLayoutPanel"
-author: David
 date: 2006/03/08
-categories: .net;programming;visual studio
-guid: 6368c694-080e-4899-98ec-c7e140f3d0c2
+category: blog
+---
 
 I've blogged about the [FlowLayoutPanel in the past](/blog/2006/01/24/some-notes-on-the-flowlayoutpanel/). It is a highly useful control in certain circumstances, but it doesn't behave as expected a lot of the time. In trying to better explain how it works, I created a small test program to show what it is doing. Here is what it looks like:
 

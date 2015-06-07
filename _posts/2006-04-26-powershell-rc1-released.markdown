@@ -1,17 +1,17 @@
-
+---
+layout: post
 title: "PowerShell RC1 released!"
-author: David
 date: 2006/04/26
-categories: .net;programming;utilities
-guid: 15a742ed-5009-402c-94dc-3e618e340a93
+category: blog
+---
 
 Never heard of PowerShell you say?
 
 I hadn't either, at least until today. That's because it used to be called Monad. Microsoft released the [RC1 of PowerShell today](http://blogs.msdn.com/powershell/archive/2006/04/25/583344.aspx) and it is pretty sweet. Basically, it offers scripting and CLI access to the .NET Framework. Instead of using cmd.exe, you'll be using PowerShell.exe. I haven't used it much yet, but it is really cool. Just as a quick example, try this out in PowerShell:
 
-```powershell
+{% highlight powershell %}
 $var = "This is a sweet"
-```
+{% endhighlight %}
 
 Now, type `$var`. and then hit tab.
 

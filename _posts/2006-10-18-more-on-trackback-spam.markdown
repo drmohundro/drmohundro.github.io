@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "More on Trackback Spam..."
-author: David
 date: 2006/10/18
-categories: general
-guid: 913978e7-8566-453e-941f-89d2fd37e9ae
+category: blog
+---
 
 Earlier this week, I [posted](/blog/2006/10/16/trackback-spam-deluge/) on some major problems I was having with trackback spam. By way of a comment, Tim Rayburn pointed me to his [post](http://timrayburn.net/blog/upgrading-to-dasblog-1-9-6288/) on Akismet support that the nightly builds of dasBlog now included. 
 

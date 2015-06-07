@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Blue screens on virtual machines"
-author: David
 date: 2007/10/03
-categories: general
-guid: 9f440177-72f8-4dbd-827d-6acb9b0b4d3a
+category: blog
+---
 
 ![Windows 2000 BSOD](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/Bluescreensonvirtualmachines_88F8/image.png)  
 

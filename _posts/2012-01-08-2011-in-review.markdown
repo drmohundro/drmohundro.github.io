@@ -1,6 +1,9 @@
 ---
-title: 2011 in Review
+layout: post
+title: "2011 in Review"
 date: 2012/01/08
+category: blog
+---
 
 Now that the year of the Mayans is upon us, I wanted to take some time to look
 back over 2011. And don't worry, I'll do my best to not mention the Mayans and

@@ -1,5 +1,8 @@
-title: Applied PowerShell Presentation
+---
+layout: post
 date: 2013/04/26
+category: blog
+---
 
 I've begun presenting again with some frequency. My topic of choice,
 unsurprisingly, is PowerShell. I had presented on PowerShell quite a bit back

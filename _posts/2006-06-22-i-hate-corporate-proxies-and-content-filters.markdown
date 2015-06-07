@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "I hate corporate proxies and content filters!"
-author: David
 date: 2006/06/22
-categories: general
-guid: 65f517c5-9ad6-485b-a512-7c3797b84f08
+category: blog
+---
 
 I hate corporate proxies and content filters!
 

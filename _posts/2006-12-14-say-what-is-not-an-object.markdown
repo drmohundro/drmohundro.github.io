@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Say what is not an object?!?"
-author: David
 date: 2006/12/14
-categories: javascript
-guid: adae9fb6-5296-4356-a830-358a4e39d31c
+category: blog
+---
 
 Ahhh, JavaScript error messages. 
 

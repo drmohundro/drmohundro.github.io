@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "History of programming languages"
-author: David
 date: 2006/01/13
-categories: general
-guid: 4843c0ef-a9e4-4b5c-a47e-a90b0d4d4e59
+category: blog
+---
 
 Do you like C-based languages like C, C++, Java, and C#? Or do you like BASIC instead? It doesn't matter what your answer is, though, because the two links below are hilarious either way.
 

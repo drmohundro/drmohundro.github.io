@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "And you thought dual SLI video cards was impressive..."
-author: David
 date: 2006/01/09
-categories: hardware
-guid: 6dd05072-1a48-4044-b758-45b31b1a3100
+category: blog
+---
 
 How about **FOUR**?!?
 

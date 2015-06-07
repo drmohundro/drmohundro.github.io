@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Another year, another devLink (part 3)"
-author: David
 date: 2009/08/26
-categories: conferences
-guid: e9661fd6-c7f8-48fd-bd49-8e703001d8d1
+category: blog
+---
 
 So, it didn't occur to me until today that I was creating a trilogy here.
 

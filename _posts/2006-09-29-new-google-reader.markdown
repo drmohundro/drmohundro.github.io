@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "New Google Reader!"
-author: David
 date: 2006/09/29
-categories: general
-guid: cbdec793-4a7c-4892-adb4-964832702e86
+category: blog
+---
 
 Great news! 
 

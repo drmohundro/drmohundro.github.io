@@ -1,6 +1,9 @@
 ---
-title: Adoption and My Second Daughter!
+layout: post
+title: "Adoption and My Second Daughter!"
 date: 2014/04/01
+category: blog
+---
 
 Last year at DevLink, I can clearly recall sitting in a session about Durandal and John Papa's Hot Towel VS template. My friend Michael Johnson was speaking. I was sitting two or three rows from the back because the room had filled up pretty quickly. 
 

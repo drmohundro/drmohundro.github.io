@@ -1,6 +1,9 @@
 ---
-title: A Look at Converting an Existing Application to Async/Await
+layout: post
+title: "A Look at Converting an Existing Application to Async/Await"
 date: 2013/12/06
+category: blog
+---
 
 Microsoft has made strides in the realm of multithreading in the last few years by introducing things like the Task Parallel Library and now async/await support in C#. I thought it would be interesting to share some of my experiences in converting an existing WPF application over to use async/await.
 
@@ -14,7 +17,7 @@ Basically, you implement Caliburn's `IResult` and then any methods on your view 
 
 Below is a snippet of the code from one of our view models:
 
-```cs
+{% highlight csharp %}
 var otherServers = allServers.Except(initialServers).ToList();
 
 // copy from build server (threaded)
@@ -34,7 +37,7 @@ var unzipMessage = string.Join("\n", allServers.Select(
     s => string.Format("Unzipping {0} on {1}...", buildToCopy.Name, s.Name)));
 Busy(unzipMessage);
 yield return new BulkUnzipAction(allServers, initialServers.First().LastDeploymentBundle.Name);
-```
+{% endhighlight %}
 
 The code is hopefully easy to follow, but it should give you an idea of what Caliburn's coroutine-support provides. The `Busy` method is used to indicate to the user what the application is doing. Each `Action` instance above will actually be kicked off on a separate thread, but the UI will not block. So, the `BulkCopyFromBuildServerAction` will take a list of initial servers to copy to as well as a build and will copy the build to each server in the list. The `BulkCopyFromPrimaryServerAction` will copy from a list of servers to the other servers in the environment.
 
@@ -44,7 +47,7 @@ And, of course, the `BulkUnzipAction` will unzip the compressed build artifact o
 
 Here is the code for `BulkCopyFromBuildServerAction`:
 
-```cs
+{% highlight csharp %}
 public class BulkCopyFromBuildServerAction : AsyncResult
 {
     private readonly DeploymentBundle _bundleToDeploy;
@@ -61,7 +64,7 @@ public class BulkCopyFromBuildServerAction : AsyncResult
         Parallel.ForEach(_otherServers, s => s.CopyFromBuildServer(_bundleToDeploy));
     }
 }
-```
+{% endhighlight %}
 
 As you can see, we do the copy in parallel using `Parallel.ForEach`. Note that Caliburn.Micro doesn't provide the AsyncResult base class implementation - I haven't included the source here, but I can if needed.
 
@@ -71,7 +74,7 @@ I was concerned that it would take a lot of work to rip out all of the IResult a
 
 The second was to remove the `yield return` calls and basically inline the work that the actions were doing. I might end up reintroducing the actions as a refactoring option, but it was less code at the time to just bring the action code over.
 
-```cs
+{% highlight csharp %}
 var otherServers = allServers.Except(initialServers).ToList();
 
 // copy from build server (threaded)
@@ -91,7 +94,7 @@ var unzipMessage = string.Join("\n", allServers.Select(
     s => string.Format("Unzipping {0} on {1}...", buildToCopy.Name, s.Name)));
 Busy(unzipMessage);
 await allServers.ForEachAsync(async s => await s.UnzipBuild(initialServers.First().LastDeploymentBundle.Name));
-```
+{% endhighlight %}
 
 As you can see, there aren't a lot of differences aside from the new `await` calls.
 
@@ -110,9 +113,9 @@ Easily, the most difficult part of the conversion for me was handling the `Paral
 
 I was also shocked at just how much changed by introducing async/await. I can't recall the source, but I remember reading someone who mentioned that async/await will "barf all over your code." That isn't an exaggeration. Over 70% of the source files in the solution had to change before the conversion was done. Here is the diff stat for the change:
 
-```no-highlight
+{% highlight text %}
 36 files changed, 607 insertions(+), 725 deletions(-)
-```
+{% endhighlight %}
 
 It makes sense when you think about it... you find one operation that you want to make async, say, a call to a web resource. So, basically you change the code from using `WebClient.DownloadString` to instead use `HttpClient.GetStringAsync` and add an `await`. Sounds simple enough, except that the method that is now awaiting has to be marked `async`. And then all callers to this method have to add an `await`... which means they have to be marked `async`. And so and so forth, all the way to the top of the application. Alternatively, you can add an explicit `Task.Wait`, but no one wants to add a blocking call when you could have non-blocking async goodness.
 

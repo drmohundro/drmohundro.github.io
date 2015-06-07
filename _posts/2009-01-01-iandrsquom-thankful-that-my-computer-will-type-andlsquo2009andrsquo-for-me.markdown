@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "I&rsquo;m thankful that my computer will type &lsquo;2009&rsquo; for me"
-author: David
 date: 2009/01/01
-categories: general
-guid: 58b84948-4d3c-4e9e-bd3f-4a424165ac14
+category: blog
+---
 
 So, a year ago to the day, I posted [my review of 2007 with a look towards
 2008](/blog/2008/01/01/welcome-2008-2007-in-review/). To continue that age old

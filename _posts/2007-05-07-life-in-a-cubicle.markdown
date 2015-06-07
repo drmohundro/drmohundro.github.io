@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Life in a cubicle"
-author: David
 date: 2007/05/07
-categories: general
-guid: 64ca7032-2fa9-4b78-afe2-69fc8edc03ae
+category: blog
+---
 
 I've already shared with you about how [cubicles really can be annoying when you sit next to the loudest two individuals in the world](/blog/2006/08/27/noisy-working-conditions/).
 

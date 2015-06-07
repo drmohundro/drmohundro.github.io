@@ -1,6 +1,9 @@
---- 
-title: //BUILD/ Windows Conference
+---
+layout: post
+title: "//BUILD/ Windows Conference"
 date: 2011/10/14
+category: blog
+---
 
 So, a few weeks ago I was able to attend the BUILD Windows conference in
 Anaheim. I'm guessing you heard something about it. The last time Microsoft

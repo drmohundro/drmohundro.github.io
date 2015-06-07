@@ -1,6 +1,9 @@
 ---
-title: Code review of randomness
+layout: post
+title: "Code review of randomness"
 date: 2012/04/10
+category: blog
+---
 
 Last week, prior to a weekly meeting, one of my team members had the idea to
 take a few minutes before the meeting to review some code. We already do code
@@ -24,7 +27,7 @@ having the team take just 10 minutes to look over it.
 The solution was a PowerShell script that I whipped together in about 15
 minutes. Here it is:
 
-```powershell
+{% highlight powershell %}
 param (
     $fileType = "cs",
     $directoryToSearch = "c:\path\to\source\repo"
@@ -60,7 +63,7 @@ $randomlySelectedFile  = allFilesOfType | Get-Random -count 1 | select -expand F
 & $editor $randomlySelectedFile
 
 Pop-Location
-```
+{% endhighlight %}
 
 As you can see, it is pretty basic. Most of the complexity involves excluding
 Designer or generated files. Once the script determines a random file, it

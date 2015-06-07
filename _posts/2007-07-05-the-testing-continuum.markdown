@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "The Testing Continuum"
-author: David
 date: 2007/07/05
-categories: programming
-guid: 7e29e3c2-f754-4ba8-bc79-8afd719dc9fc
+category: blog
+---
 
 In the few years that I've worked as a software developer, I've read and seen
 many examples of testing software. As a result, my own thinking regarding

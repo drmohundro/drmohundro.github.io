@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Welcome to the Future!!!"
-author: David
 date: 2010/01/05
-categories: general
-guid: d957636b-2693-4782-a7f6-f1c769a5a18c
+category: blog
+---
 
 It's 2010. Seriously. Can you believe it? Aren't we supposed to have [flying
 cars, hoverboards](http://www.imdb.com/title/tt0096874/), and have [space ships

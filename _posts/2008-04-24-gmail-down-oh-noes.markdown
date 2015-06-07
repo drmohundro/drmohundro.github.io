@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Gmail down?!? Oh noes!"
-author: David
 date: 2008/04/24
-categories: general
-guid: fc4bf46e-1cdd-4337-9b84-5ebfa7e297d2
+category: blog
+---
 
 ![Gmail down?](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/GmaildownOhnoes_8004/image_2.png)
 

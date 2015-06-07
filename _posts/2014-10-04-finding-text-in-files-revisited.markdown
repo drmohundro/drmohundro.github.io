@@ -1,6 +1,9 @@
 ---
-title: Finding Text in Files Revisited
+layout: post
+title: "Finding Text in Files Revisited"
 date: 2014/10/04
+category: blog
+---
 
 If your career is anything like mine, you've dealt with a wide array of various code bases across multiple technologies. Some web, some client, etc. With varying technologies, the tools change, the languages change, everything changes.
 
@@ -26,7 +29,7 @@ First off, I want to share the tools of the trade that have existed for years...
 
 Often, you'll see `grep` used in conjuction with other tools, like `ps` to search for specific processes or other command line tools. By default, it just returns any lines that match the search term from stdin.
 
-```bash
+{% highlight bash %}
 # use in conjunction with the find command
 find "directory" -name "*.js" | xargs grep "jQuery"
 
@@ -44,7 +47,7 @@ grep -rnw "directory" --include "*.js" -e "jQuery" -A 3
 
 # look in current directory for jQuery across all files
 grep -rnw . -e jQuery -A 3
-```
+{% endhighlight %}
 
 To install `grep`, you either have it installed already because you're on a *nix platform or you can install it via [Grep for Windows](http://gnuwin32.sourceforge.net/packages/grep.htm).
 
@@ -56,13 +59,13 @@ In my humble opinion, while it can get the job done, you're much better off usin
 
 Usage:
 
-```dos
+{% highlight batch %}
 REM some relevant options:
 REM   /p = skip files with non-printable characters
 REM   /s = recursive searc
 REM   /c = search term
 findstr /p /s /c:"jQuery" *.js
-```
+{% endhighlight %}
 
 No installation instructions - you're either on Windows and have it or you're not and don't need it.
 
@@ -76,7 +79,7 @@ In the last 10 years or so, there have been a few stand out tools that have atte
 
 Usage:
 
-```bash
+{% highlight bash %}
 # relevant options:
 #   --smart-case   = if set, ignores case unless the search term contains any upper case
 #   -A             = context lines to show (after match)
@@ -87,18 +90,18 @@ Usage:
 #   like --js, --csharp, --ruby, etc.
 
 ack --js jQuery -A 3
-```
+{% endhighlight %}
 
 To install, I'd recommend one of the following:
 
 * Windows?
-	* Install [Chocolatey](http://chocolatey.org/)
-	* Run `choco install ack`
+  * Install [Chocolatey](http://chocolatey.org/)
+  * Run `choco install ack`
 * OSX?
-	* Install [homebrew](http://brew.sh/)
-	* Run `brew install ack`
+  * Install [homebrew](http://brew.sh/)
+  * Run `brew install ack`
 * Linux?
-	* See [list of packages](http://beyondgrep.com/install/)
+  * See [list of packages](http://beyondgrep.com/install/)
 
 ### Find-String (Windows)
 
@@ -108,11 +111,11 @@ PowerShell was released in 2006. It shipped with a cmdlet called `Select-String`
 
 Usage:
 
-```powershell
+{% highlight powershell %}
 # relevant options:
 #   --context   = [x,y] where x is number of lines before and y is number of lines after
 Find-String jQuery *.js --context 0,3
-```
+{% endhighlight %}
 
 To install, I'd first install [PsGet](http://psget.net/) and then you can just run `Install-Module Find-String`.
 
@@ -124,7 +127,7 @@ In the last few years, there has been renewed interest in tools like `grep` and 
 
 In 2011, the Silver Searcher (`ag`) was released. To my understanding, it was the first code search tool since `grep` that was written in C. As a result, it performed faster than *any* of the competition. In the Linux and OSX communities, it was quickly gaining ground over tools like `ack`. In Windows, however, it was far too difficult for most people to get to compile in Windows. I used it when I was working in OSX, but I stuck with `Find-String` when I worked in Windows. However, recently I discovered pre-built binaries of ag for Windows that work great and out-perform `Find-String` by quite a bit.
 
-```bash
+{% highlight bash %}
 # relevant options:
 #   --smart-case   = if set, ignores case unless the search term contains any upper case
 #   -A             = context lines to show (after match)
@@ -135,17 +138,17 @@ ag jQuery -G "\.js$" -A 3
 
 # or if you want to search all files... it is fast enough it likely won't matter!
 ag jQuery -A 3
-```
+{% endhighlight %}
 
 To install, I'd recommend one of the following:
 
 * Windows?
-	* Check out [Krzysztof Kowalczyk's pre-built binaries](http://blog.kowalczyk.info/software/the-silver-searcher-for-windows.html)
+  * Check out [Krzysztof Kowalczyk's pre-built binaries](http://blog.kowalczyk.info/software/the-silver-searcher-for-windows.html)
 * OSX?
-	* Install [homebrew](http://brew.sh/)
-	* Run `brew install the_silver_searcher`
+  * Install [homebrew](http://brew.sh/)
+  * Run `brew install the_silver_searcher`
 * Linux?
-	* See [main project for details](https://github.com/ggreer/the_silver_searcher)
+  * See [main project for details](https://github.com/ggreer/the_silver_searcher)
 
 ### The Platinum Searcher (pt) (cross platform)
 
@@ -153,7 +156,7 @@ The final one I'd like to share is the Platinum Searcher (`pt`). It is *very* ne
 
 You may notice that the command line options are almost identical to `ag`, which is nice.
 
-```bash
+{% highlight bash %}
 # relevant options:
 #   --smart-case   = if set, ignores case unless the search term contains any upper case
 #   -A             = context lines to show (after match)
@@ -164,7 +167,7 @@ pt jQuery -G "\.js$" -A 3
 
 # or if you want to search all files... it is fast enough it likely won't matter!
 pt jQuery -A 3
-```
+{% endhighlight %}
 
 To install, you can just grab one of the [pre-built releases](https://github.com/monochromegane/the_platinum_searcher/releases) or run `brew install pt` on OSX.
 

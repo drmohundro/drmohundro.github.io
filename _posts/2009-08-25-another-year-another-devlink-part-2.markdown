@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Another year, another devLink (part 2)"
-author: David
 date: 2009/08/25
-categories: conferences
-guid: bb8df4e2-52dc-4f46-97d2-04c563ac64bd
+category: blog
+---
 
 Yesterday, [I blogged about the first day of
 devLink](/blog/2009/08/24/another-year-another-devlink-part-1/) - today, I'll

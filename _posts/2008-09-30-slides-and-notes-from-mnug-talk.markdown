@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Slides and notes from MNUG talk"
-author: David
 date: 2008/09/30
-categories: .net user group;powershell;speaking
-guid: 5e394665-d693-42e5-aee9-8c7be01f4d73
+category: blog
+---
 
 I promised the slides, notes and links from my [Memphis .NET User
 Group](http://mnug.net) talk, so here they are... and wow, they haven't

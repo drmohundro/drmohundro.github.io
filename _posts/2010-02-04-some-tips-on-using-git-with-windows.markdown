@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Some tips on using git with Windows"
-author: David
 date: 2010/02/04
-categories: utilities
-guid: 30d2af92-322a-4efe-89d1-07d824eac432
+category: blog
+---
 
 The .NET open source community has really started to embrace
 [git](http://www.git-scm.com/) in the past few months.
@@ -91,10 +91,10 @@ what am I doing to tell git to use color anyway? I'm using an environment
 variable tweak that I learned about via one of the [msysgit issues](http://code.google.com/p/msysgit/issues/detail?id=326&q=color&colspec=ID%20Type%20Status%20Priority%20Component%20Owner%20Summary#c5)).
 Here's the line from my powershell profile:
 
-```powershell
+{% highlight powershell %}
 $env:TERM = 'cygwin'
 $env:LESS = 'FRSX'
-```
+{% endhighlight %}
 
 This line basically lies about the running terminal - "hi git, my terminal
 isn't actually powershell or cmd.exe or console2, it's actually cygwin." The

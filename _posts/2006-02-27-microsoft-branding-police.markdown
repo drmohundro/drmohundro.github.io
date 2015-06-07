@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Microsoft Branding Police!"
-author: David
 date: 2006/02/27
-categories: 
-guid: ed295396-5b9b-43c3-a233-bc64069c2c08
+category: blog
+---
 
 What would happen if Microsoft had branded the iPod instead of Apple?
 

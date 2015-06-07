@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Would you like to accept this call?"
-author: David
 date: 2007/03/20
-categories: general
-guid: 5dc57115-c554-49d0-9d06-7e8bd47b046c
+category: blog
+---
 
 This is completely off-topic, but I thought it was pretty funny. 
 

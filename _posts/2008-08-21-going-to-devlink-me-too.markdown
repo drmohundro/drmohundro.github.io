@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Going to DevLink? Me too!"
-author: David
 date: 2008/08/21
-categories: conferences
-guid: 9a842f4e-b384-43bf-a1b1-3229239ede88
+category: blog
+---
 
 Last year, [I attended DevLink](/blog/2007/10/17/devlink-2007-recap/). It was very well done and so, this year, I'm going again! 
 

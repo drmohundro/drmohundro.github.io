@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "More PowerShell automation and unrelated updates"
-author: David
 date: 2007/01/11
-categories: general;powershell
-guid: 0123fded-9dcc-44b6-aa11-87a76fde36ee
+category: blog
+---
 
 A recent post by Lee Holmes on [breaking your writer's (blogger's?) block](http://www.leeholmes.com/blog/BreakYourWritersBlock.aspx) is prompting this post. I recently finished reading Steve McConnell's book, [Code Complete](http://cc2e.com/Default.aspx)\*, over the Christmas holidays and the book was amazing. As I read it, I began taking lists of things I wanted to post on that were excellent advice... and ran into a block because there was just so much I wanted to say about. I still plan on writing more detailed posts on the issue but, as Lee suggests, I need to just get out here and post more. 
 
@@ -15,12 +15,12 @@ One of my favorite functions is incredibly simple but it highlights how you can 
 
 This also prompted me to set up the winmerge function below:
 
-```powershell
+{% highlight powershell %}
 function winmerge ([string]$path1, [string]$path2) {
   $winmergePath = "c:\program files\winmerge\winmerge.exe"
   . $winmergePath $path1 $path2
 }
-```
+{% endhighlight %}
 
 It allows me to quickly see the comparisons between two different files without having to preselect them with the mouse. It is simple, but quite convenient. And I also don't have to go adding all sorts of random directories to my PATH just so I can get to them more quickly.
 

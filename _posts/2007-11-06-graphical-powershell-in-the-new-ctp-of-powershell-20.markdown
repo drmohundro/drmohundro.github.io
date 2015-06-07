@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Graphical PowerShell in the new CTP of PowerShell 2.0"
-author: David
 date: 2007/11/06
-categories: powershell
-guid: 64c990c2-5be1-4d43-94c4-a387058d55b5
+category: blog
+---
 
 ![PowerShell ISE](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/GraphicalPowerShellinthenewCTPofPowerS.0_7A05/image.png)
 

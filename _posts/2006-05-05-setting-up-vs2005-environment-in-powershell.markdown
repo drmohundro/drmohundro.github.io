@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Setting up VS2005 environment in PowerShell"
-author: David
 date: 2006/05/05
-categories: .net;utilities
-guid: 5120b38f-531a-4623-a04d-64e9a21ac7f2
+category: blog
+---
 
 Many thanks to [Robert W. Anderson](http://et.cairene.net/) for this solution.
 

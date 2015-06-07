@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Getting started with WiX and Major Upgrades!"
-author: David
 date: 2009/02/23
-categories: general;programming
-guid: 3a062223-e79a-40b8-a23a-e31a7734b92e
+category: blog
+---
 
 ## WiX Setup
 

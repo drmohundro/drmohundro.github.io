@@ -1,9 +1,9 @@
-
+---
+layout: post
 title: "Mass confusion! (aka the Story About how I Thought my Feed had Died)"
-author: David
 date: 2006/03/31
-categories: general;visual studio
-guid: 946b5b37-7054-4d05-931c-3c9362bbed18
+category: blog
+---
 
 Yesterday afternoon, I posted on [ShellExecuteEx and executing files with unknown file extensions](/blog/2006/03/31/opening-files-that-dont-have-associated-programs/). I was really confused, though, because my feed just wouldn't show up in my aggregator ([RSS Bandit](http://www.rssbandit.org)). I knew it wasn't my reader, though, because I had navigated to my feed's address ([http://feeds.feedburner.com/DavidMohundro](http://feeds.feedburner.com/DavidMohundro)) and it wasn't displaying my added post. I threw a few test posts out there but nothing would show up. I'll admit, I couldn't help but wonder if something had happened with FeedBurner. I shouldn't have doubted, though. It was indirectly my fault.
 

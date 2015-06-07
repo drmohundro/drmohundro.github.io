@@ -1,6 +1,9 @@
 ---
-title: Digging into the ASP.NET vNext Environment
+layout: post
+title: "Digging into the ASP.NET vNext Environment"
 date: 2014/05/29
+category: blog
+---
 
 __DISCLAIMER__: I'm still digging and learning about the new .NET bits... this blog post is just what I've learned on my own thus far. If I say something incorrect, let me know. I'm just a frozen caveman after all...
 
@@ -14,7 +17,7 @@ I followed Graeme's instructions and ended up getting Mono 3.4.1 set up on my Ma
 
 With that done, I wanted to dig a little deeper... you know, find out just what assemblies are loaded and so on. I ended up writing the below application to try some things out:
 
-```cs
+{% highlight csharp %}
 using System;
 using System.Reflection;
 
@@ -51,11 +54,11 @@ class Program {
     Console.WriteLine();
   }
 }
-```
+{% endhighlight %}
 
 Below is the output from a run of this program (using `k run`).
 
-```no-highlight
+{% highlight text %}
 -- Environment --
 Environment.OSVersion: Unix 13.2.0.0
 Environment.Version: 4.0.30319.17020
@@ -228,7 +231,7 @@ AppDomain.CurrentDomain.GetAssemblies():
 
   FullName: aspnetvnext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   Location:
-```
+{% endhighlight %}
 
 What's interesting to me is to see the wide variety of assemblies loaded along with their locations, especially the ones that have blank locations. [Scott Hanselman's introductory post to ASP.NET vNext](http://www.hanselman.com/blog/IntroducingASPNETVNext.aspx) mentions that "the assemblies never exist on disk...because it's actually faster and easier to have the compiler do all the work in memory." This is all thanks to Roslyn. It's pretty awesome.
 

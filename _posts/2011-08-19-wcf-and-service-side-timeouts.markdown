@@ -1,6 +1,9 @@
 ---
-title: WCF and service-side Timeouts
+layout: post
+title: "WCF and service-side Timeouts"
 date: 2011/08/19
+category: blog
+---
 
 Ah, timeouts. At my previous job, I wrote quite a bit of code that dealt with
 threading. When dealing with threads, asynchronous operations, and performant
@@ -43,7 +46,7 @@ it may not be long before you've filled up those 10 concurrent sessions.
 Let's assume that the horrible service in question is written with an infinite
 loop. Sort of like this:
 
-```cs
+{% highlight csharp %}
 public class TestServiceImpl : ITestService
 {
     public TestResult TestIt(TestArgs args)
@@ -60,7 +63,7 @@ public class TestServiceImpl : ITestService
         return new TestResult {Result = "Args were " + args.Args};
     }
 }
-```
+{% endhighlight %}
 
 Will WCF do anything to help you out? Not really, at least from the
 service side. You can configure the `receiveTimeout`, `sendTimeout`,
@@ -94,9 +97,9 @@ caught and is reset, so that a true `TimeoutException` can be thrown instead.
 
 Usage looks like this:
 
-```cs
+{% highlight csharp %}
 Run.For(10.Seconds(), () => DoSomeStuff());
-```
+{% endhighlight %}
 
 Basically, you pass in how long it should run (we've made it a little more
 readable with some extension methods), and a delegate. When we're working with
@@ -112,7 +115,7 @@ which can be used to decorate service operations on the service contracts.
 
 So, the invoke method of our custom IOperationInvoker looks like this:
 
-```cs
+{% highlight csharp %}
 public object Invoke(object instance, object[] inputs, out object[] outputs)
 {
     object[] inputOutputs = null;
@@ -125,12 +128,12 @@ public object Invoke(object instance, object[] inputs, out object[] outputs)
     outputs = inputOutputs;
     return returnValue;
 }
-```
+{% endhighlight %}
 
 If we were to hook up our custom behavior directly to a service contract, it
 would look like this:
 
-```cs
+{% highlight csharp %}
 [ServiceContract]
 public interface IAmAnAwesomeServiceContract
 {
@@ -138,12 +141,12 @@ public interface IAmAnAwesomeServiceContract
     [OperationTimeoutBehavior(60)]
     OpResults GoFindSomeAwesomeStuff(OpArgs args);
 }
-```
+{% endhighlight %}
 
 However, we would rather it happen for all of our services, so we implemented
 a custom ServiceHost and we add our custom behavior in the OnOpening method.
 
-```cs
+{% highlight csharp %}
 protected override void OnOpening()
 {
     foreach (var op in Description.Endpoints
@@ -154,7 +157,7 @@ protected override void OnOpening()
     }
     base.OnOpening();
 }
-```
+{% endhighlight %}
 
 The above details could be used to hook in just about any behaviors around WCF
 invocation, including pre and post call.

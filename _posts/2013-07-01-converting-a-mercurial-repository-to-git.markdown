@@ -1,6 +1,9 @@
 ---
-title: Converting a Mercurial repository to Git
+layout: post
+title: "Converting a Mercurial repository to Git"
 date: 2013/07/01
+category: blog
+---
 
 About three years ago, our team migrated from using Subversion to Mercurial,
 primarily because of the pain involved with branches. If you've heard the
@@ -37,12 +40,12 @@ name formats.
 
 The basic steps to use it are:
 
-```bash
+{% highlight bash %}
 mkdir my-new-repo
 cd my-new-repo
 git init
 hg-fast-export -r ../path/to/hg/repo -A ../authors.txt
-```
+{% endhighlight %}
 
 It actually worked fine for our smaller repositories. It did however fail when
 I tried to convert our main repository. My guess is that we had a branch
@@ -116,7 +119,7 @@ feedback loop from hours to minutes.
 Basically, I changed the code in the method `fixup_user()` to have the
 following code (with censored users and emails):
 
-```python
+{% highlight python %}
 found_user = '%s <%s>' % (name, mail)
 
 user_mapping = {
@@ -132,7 +135,7 @@ except KeyError:
     warn("Couldn't find user mapping for %s" % found_user)
 
 return found_user
-```
+{% endhighlight %}
 
 Finally, success! The best part was that I had a repeatable process that ran
 quickly! Once that was complete, I was able to successfully push the
