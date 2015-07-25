@@ -23,5 +23,4 @@ I'm a Christian, a husband, and a father. I've got two daughters, one by
 [birth](/blog/2011/06/24/introducing-daila-joy/) and one by
 [adoption](/blog/2014/04/01/adoption-and-my-second-daughter/). I like
 [video games](http://doctormo.tumblr.com/), movies, books, and
-music.  I also enjoy traveling.
-
+music. I also enjoy traveling.
