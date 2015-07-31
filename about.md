@@ -7,7 +7,7 @@ permalink: /about/
 ![It's a picture of me](/images/me.png)
 
 My name is David, but a lot of people call me Mo. It comes from my last
-name... __Mo__hundro. You get it, right?
+name... **Mo**hundro. You get it, right?
 
 I'm a software developer/artisan/craftsman/engineer living in the Memphis,
 TN area. I write in C# for a living, but I also write Ruby for fun. I'm a big
