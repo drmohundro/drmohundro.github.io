@@ -1,12 +1,15 @@
 title: David Mohundro
 email: david@mohundro.com
-description: >
-  David Mohundro is a programmer, speaker, dad, gamer, and more.
+description: David Mohundro is a programmer, speaker, dad, gamer, and more.
 
 baseurl: ""
 url: "http://mohundro.com"
+
 twitter_username: drmohundro
 github_username:  drmohundro
+google_analytics_tracking_id: UA-3973340-1
+disqus_short_name: mohundro
+
 highlighter: pygments
 
 paginate: 10
