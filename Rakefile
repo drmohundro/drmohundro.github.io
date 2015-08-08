@@ -1,7 +1,7 @@
 # cp ../mohundro.com/blog/articles/* _posts
 # for file in *.md; do mv "$file" "${file/.md/.markdown}"; done
 
-desc 'Convert old binary links over to s3 binary links'
+desc 'Convert toto posts to jekyll posts'
 task :convert_posts do
   Dir['_posts/*.markdown'].each do |f|
     contents = File.read f
