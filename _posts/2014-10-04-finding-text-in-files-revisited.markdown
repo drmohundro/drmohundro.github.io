@@ -117,7 +117,9 @@ Usage:
 Find-String jQuery *.js --context 0,3
 {% endhighlight %}
 
-To install, I'd first install [PsGet](http://psget.net/) and then you can just run `Install-Module Find-String`.
+If you have access to PowerShell 5, I've got `Find-String` up on the [PowerShell Gallery](https://www.powershellgallery.com/packages/Find-String/). You can install it by running `Install-Module Find-String`.
+
+If you're not yet on PowerShell 5, try installing [PsGet](http://psget.net/) and then you can just run `Install-Module Find-String`.
 
 ## The New Players
 
