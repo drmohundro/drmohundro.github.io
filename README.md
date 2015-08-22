@@ -1,4 +1,7 @@
-drmohundro.github.io
-====================
+# Jekyll / GitHub Pages version of mohundro.com
 
-GitHub Pages repository.
+This is the source code for my website, [mohundro.com](http://mohundro.com).
+
+This version of the site is built with Jekyll and is running on GitHub Pages.
+
+&copy; David Mohundro 2015
