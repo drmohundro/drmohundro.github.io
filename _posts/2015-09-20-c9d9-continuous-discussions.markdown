@@ -5,13 +5,13 @@ date: 2015/09/20
 category: blog
 ---
 
-About a month ago, I was invited to participate in an online panel discussion on a [Continuous Discussions (#c9d9) episode](http://electric-cloud.com/lp/continuous-discussions/).
+About a month ago, I was invited to participate in an online panel discussion on a [Continuous Discussions (#c9d9) episode](http://electric-cloud.com/lp/continuous-discussions/), which was organized by [Electric Cloud](http://electric-cloud.com/powering-continuous-delivery/). It was set up over Google Hangouts and everyone had some really great thoughts. If you've ever participated in a well-organized open spaces session or sat in on a speakers panel at a conference, it felt a little bit like that. I'd encourage you to check it out.
 
 You can see a recording of the panel here:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HkLuAOXxuLs" frameborder="0" allowfullscreen></iframe>
 
-I've included a brief overview of my thoughts below.
+I've included a brief overview of my thoughts and comments from the panel below.
 
 ## Culture and team structure
 
@@ -41,4 +41,4 @@ An honest and accurate understanding of where we stood helped us continue to ite
 
 ## In closing
 
-I really enjoyed the discussion - the other participants all had some great observations as well. I'd encourage to check it out and let me know your thoughts!
+I really enjoyed the discussion - the other participants all had some great observations as well. Let me know your thoughts!
