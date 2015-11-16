@@ -113,8 +113,8 @@ Usage:
 
 {% highlight powershell %}
 # relevant options:
-#   --context   = [x,y] where x is number of lines before and y is number of lines after
-Find-String jQuery *.js --context 0,3
+#   -context   = [x,y] where x is number of lines before and y is number of lines after
+Find-String jQuery *.js -context 0,3
 {% endhighlight %}
 
 If you have access to PowerShell 5, I've got `Find-String` up on the [PowerShell Gallery](https://www.powershellgallery.com/packages/Find-String/). You can install it by running `Install-Module Find-String`.
