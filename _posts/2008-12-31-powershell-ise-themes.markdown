@@ -23,7 +23,7 @@ The [$psISE variable offers up a wealth of options](http://blogs.msdn.com/powers
 
 Looks different, eh? Below is the code to get it to work:
 
-{% highlight powershell %}
+```powershell
 # PowerShell ISE version of the VIM blackboard theme at 
 # http://www.vim.org/scripts/script.php?script_id=2280
 
@@ -61,13 +61,13 @@ $psISE.Options.TokenColors['Variable'] = '#FF00D42D'
 $psISE.Options.TokenColors['CommandParameter'] = '#FFFFDE00'
 $psISE.Options.TokenColors['CommandArgument'] = '#FFFFFFFF'
 $psISE.Options.TokenColors['Number'] = '#FF98FE1E'
-{% endhighlight %}
+```
 
 To use it, I just dot the script into my PowerShell ISE profile (see the $profile variable while in PowerShell ISE) like so (where ./Themes/blackboard.ps1 is the path to the blackboard theme):
 
-{% highlight powershell %}
+```powershell
 . ./Themes/blackboard.ps1
-{% endhighlight %}
+```
 
 The script is a conversion I did of the [vim blackboard theme which itself is a clone of the blackboard theme from TextMate](http://www.vim.org/scripts/script.php?script_id=2280). I'm sure it could use some tweaking, but it works for me for now.
 

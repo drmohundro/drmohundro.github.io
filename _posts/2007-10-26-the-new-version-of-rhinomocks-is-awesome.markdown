@@ -13,7 +13,7 @@ If there wasn't great fanfare, there should be. My favorite new feature - mockin
 
 At least they didn't let you mock them out until today. Here's an example of something that might have been harder to test before today:
 
-{% highlight csharp %}
+```csharp
 [TestFixture]
 public class Tests
 {
@@ -35,7 +35,7 @@ public class Tests
     }
   }
 }
-{% endhighlight %}
+```
 
 Yeah, I'm mocking System.Diagnostics.Process. Sweet.
 

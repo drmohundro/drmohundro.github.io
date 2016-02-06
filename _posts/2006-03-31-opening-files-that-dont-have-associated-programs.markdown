@@ -11,7 +11,7 @@ Fairly early on in my searching, I came across a [post](http://www.nedbatchelder
 
 Anyway, here's where I started. First, I pulled in the definition for the `SHELLEXECUTEINFO` structure.
 
-{% highlight vbnet %}
+```vb
 Friend Structure SHELLEXECUTEINFO
   Public cbSize As Integer
   Public fMask As SEE_MASK
@@ -34,11 +34,11 @@ Friend Structure SHELLEXECUTEINFO
   Public hIcon As IntPtr
   Public hProcess As IntPtr
 End Structure
-{% endhighlight %}
+```
 
 Next, I created definitions for the `SW`, `SEE_MASK`, and `SE_ERR` constants.
 
-{% highlight vbnet %}
+```vb
 #Region " SW Constants "
 Friend Enum SW As Integer
   HIDE = 0
@@ -98,19 +98,19 @@ Friend Enum SE_ERR As Integer
   SE_ERR_NOASSOC = 31
 End Enum
 #End Region
-{% endhighlight %}
+```
 
 Finally, I created my definition for the `ShellExecuteEx` function.
 
-{% highlight vbnet %}
+```vb
 <DllImport("shell32.dll", CharSet:=CharSet.Auto, SetLastError:=True)> _
 Friend Shared Function ShellExecuteEx(ByRef lpExecInfo As SHELLEXECUTEINFO) As Boolean
 End Function
-{% endhighlight %}
+```
 
 I stuck all of this into a NativeMethods class and tried the code below: 
 
-{% highlight vbnet %}
+```vb
 Dim info As New NativeMethods.SHELLEXECUTEINFO
 info.cbSize = Marshal.SizeOf(info)
 info.lpDirectory = Path.GetDirectoryName(fileToStart)
@@ -130,7 +130,7 @@ If Not NativeMethods.ShellExecuteEx(info) Then
     NativeMethods.ShellExecuteEx(sinfo)
   End If
 End If
-{% endhighlight %}
+```
 
 **UPDATED (9/12/2006):** Many thanks to Michael and his comment regarding using the `SEE_MASK.FLAG_DDEWAIT`. That fixed all of the problems I was running into regarding the above code. (see the usage on `info.fMask`)
 
@@ -140,7 +140,7 @@ See any problems with that? I certainly didn't (and still don't). It works like 
 
 As a result of the strange behavior, I changed my code slightly to look like this: 
 
-{% highlight vbnet %}
+```vb
 Try
   Using p As New Process
     p.StartInfo.FileName = fileToStart
@@ -159,7 +159,7 @@ Catch win32Ex As Win32Exception
     Throw New Win32Exception
   End If
 End Try
-{% endhighlight %}
+```
 
 The above code is working like a charm. I still have no idea why my first example won't work for me. If anyone has any ideas or suggestions, please let me know. I haven't worked with Interop between managed and unmanaged code very much. My experience up to this point has primarily been an entirely managed project or an entirely unmanaged project (and that only in college).
 

@@ -13,7 +13,7 @@ Let's say you wanted to unit test some code that had a dependency on the Windows
 
 ![Windows Media Player COM Class](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnunexpectedbenefitfromCOMobjectsinmanag_E99E/image_1.png)
 
-{% highlight csharp %}
+```csharp
 // Code to be tested
 public class SomeClass
 {
@@ -59,7 +59,7 @@ public class SomeCodeTest
       }
    }
 }
-{% endhighlight %}
+```
 
 I tried this code out and the test runs fine. Note the comment where the mock object is actually being created. For some reason, the interface to the COM object isn't named with an 'I'. It still is an interface, though. And you can create the COM object by saying 'new WMPLib.WindowsMediaPlayer' though I think that is some COM interop magic going on there (I'm guessing the CoClass attribute on the interface has something to do with this magic).
 

@@ -9,7 +9,7 @@ My post earlier today referred to the [FileHelpers](http://filehelpers.sourcefor
 
 Wow, do I wish I had known about this earlier. This thing is great! With a few easy attributes, you can use a business object as a layout for fixed-length files! Okay, I guess an example would help. Here's some VB code I whipped up to test this library out.
 
-{% highlight vbnet %}
+```vb
 Imports FileHelpers
 
 Public Class MainForm
@@ -39,7 +39,7 @@ Public Class Record
   FieldConverter(ConverterKind.Date, "yyyy-MM-dd")> _
   Public BillDate As DateTime
 End Class
-{% endhighlight %}
+```
 
 At each `Debugger.Break` line, I checked my values and this thing is great. `records(0).BillNumber` is "123456789  " and `records(0).BillDate` is a converted `DateTime` set to 1/1/2005.
 

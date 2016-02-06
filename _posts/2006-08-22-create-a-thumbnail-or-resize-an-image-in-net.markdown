@@ -16,7 +16,7 @@ My first test was resizing an image that was originally 2580 x 1932 down to 640 
 
 I will say that I am still using the GetThumbnailImage method for what it was primarily designed for: thumbnails. As the documentation says, it works fine up to about 120 x 120. I'm personally using a max width/height of 90 for my thumbnails right now. Here's an example of a call to GetThumbnailImage just so we'll get some code in this post:
 
-{% highlight csharp %}
+```csharp
 private static void CreateThumbnail(Image img, string path, Size imageSize)
 {
   // Only call this to create thumbnails smaller than 120 x 120! Otherwise, check out
@@ -28,7 +28,7 @@ private static void CreateThumbnail(Image img, string path, Size imageSize)
     IntPtr.Zero);
   thumbnail.Save(path);
 }
-{% endhighlight %}
+```
 
 As you can see, I'm using an anonymous delegate for the 3rd parameter, which presumably only exists for backwards compability, because it isn't called. It makes more sense to me to do it this way than to add a function that won't even be called.
 

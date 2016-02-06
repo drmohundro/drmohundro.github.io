@@ -15,7 +15,7 @@ Probably one of the best places to start for researching this is the [MSDN how t
 
 So, without further ado, here's a very simple GetCaption method that will return the caption/title based on an Image passed to you:
 
-{% highlight csharp %}
+```csharp
 public static string GetCaption(Image img)
 {
     if (img == null)
@@ -33,7 +33,7 @@ public static string GetCaption(Image img)
 
     return string.Empty;
 }
-{% endhighlight %}
+```
 
 Let me know what you think!
 

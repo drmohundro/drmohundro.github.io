@@ -7,15 +7,15 @@ category: blog
 I haven't posted anything on PowerShell in a while so here's something that's
 useful. 
 
-{% highlight powershell %}
+```powershell
 Get-ChildItem -Recurse -Include *.* | Select-String "text to search for"
-{% endhighlight %}
+```
 
 Or, if you like things a little more abbreviated, try this: 
 
-{% highlight powershell %}
+```powershell
 dir -r -i *.* | Select-String "text to search for"
-{% endhighlight %}
+```
 
 Select-String is a cmdlet that will search files or strings, sort of like grep
 in Unix or findstr in cmd.exe. If you use the Get-ChildItem cmdlet, you can
@@ -33,15 +33,15 @@ the Get-ChildItem command and piping the output to Select-String.
 Before I began using PowerShell, I had been using a small cmd file called
 ff.cmd that used the following: 
 
-{% highlight batch %}
+```batch
 findstr /p /s /i /c:%1 %2
-{% endhighlight %}
+```
 
 Then I could type things like: 
 
-{% highlight batch %}
+```batch
 ff "text to search for" .\*.*
-{% endhighlight %}
+```
 
 But PowerShell is so much cooler now :-)
 

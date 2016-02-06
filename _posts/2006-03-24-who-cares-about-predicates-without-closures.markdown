@@ -13,7 +13,7 @@ Compare the following VB.NET code and C# code:
 
 VB.NET :
 
-{% highlight vbnet %}
+```vb
 Module Module1
   Sub Main()
     Dim tests As New List(Of Test)
@@ -37,11 +37,11 @@ Module Module1
     End Sub
   End Class
 End Module
-{% endhighlight %}
+```
 
 C# :
 
-{% highlight csharp %}
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -71,7 +71,7 @@ namespace CSPredicateExample
     }
   }
 }
-{% endhighlight %}
+```
 
 Because of features like this, I am really looking forward to the next release of VB. Of course, with LINQ, will I even care about predicates then?
 

@@ -10,7 +10,7 @@ I've been doing some WPF work lately. WPF is ridiculously powerful and provides 
 So, the scenario. I wanted to be able to let a user click on an item in a ListBox and drag across, selecting multiple items in the process. Basically, I want to emulate the behavior that the Outlook calendar provides.
 I ended up coding up the following XAML to get the behavior:
 
-{% highlight xml %}
+```xml
 <ListBox
   x:Name="myListBox"
   SelectionMode="Multiple"
@@ -34,7 +34,7 @@ I ended up coding up the following XAML to get the behavior:
         Handler="ListBoxItem_PreviewMouseRightButtonDown" />
     </Style>
 </ListBox>
-{% endhighlight %}
+```
 
 The problem with this code is that Blend (currently v2 SP1) doesn't like EventSetters.
 
@@ -46,13 +46,13 @@ Sacha Barber has a [good article on converting from XAML to code and back](http:
 
 Here is how to programmatically create one of the EventSetters in code:
 
-{% highlight csharp %}
+```csharp
 var style = new Style(typeof (ListBoxItem));
 
 style.Setters.Add(
     new EventSetter(PreviewMouseLeftButtonDownEvent,
                     new MouseButtonEventHandler(OnPreviewMouseLeftButtonDown)));
-{% endhighlight %}
+```
 
 It's pretty straightforward, but actually hooking this style into my ListBox was what got me confused next.
 
@@ -62,9 +62,9 @@ StackOverflow's goal of being the place for one-off questions like this is start
 
 So the solution is this:
 
-{% highlight csharp %}
+```csharp
 Resources.Add(typeof (ListBoxItem), style);
-{% endhighlight %}
+```
 
 Easy enough.
 

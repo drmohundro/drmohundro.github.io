@@ -10,12 +10,14 @@ github_username:  drmohundro
 google_analytics_tracking_id: UA-3973340-1
 disqus_short_name: mohundro
 
-highlighter: pygments
-
 paginate: 10
 paginate_path: "/blog/page:num/"
 permalink: pretty
 
 markdown: kramdown
 
-gems: [jekyll-sitemap]
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+gems: [jekyll-sitemap, jekyll-paginate]

@@ -13,7 +13,7 @@ Everything works great if your panel isn't going to resize itself. You can just 
 
 Here's some code to get you started:
 
-{% highlight vbnet %}
+```vb
 Public Class Form1
   Private WithEvents flowPanel As New FlowLayoutPanel()
 
@@ -74,7 +74,7 @@ Public Class Form1
     End If
   End Sub
 End Class
-{% endhighlight %}
+```
 
 Here's MSDN [another article](http://msdn2.microsoft.com/en-us/library/z9w7ek2f.aspx) that gives some basic information on the `FlowLayoutPanel`.
 

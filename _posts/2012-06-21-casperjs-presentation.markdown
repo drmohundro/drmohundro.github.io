@@ -22,7 +22,7 @@ for your web stack.
 Just to give you a sample script, here is one that I demoed that verifies that
 my blog title is correct.
 
-{% highlight js %}
+```js
 var casper = require('casper').create();
 
 casper.start('http://mohundro.com', function() {
@@ -33,12 +33,12 @@ casper.start('http://mohundro.com', function() {
 casper.run(function() {
   this.test.renderResults(true);
 });
-{% endhighlight %}
+```
 
 A nicety with CasperJS is that it has native CoffeeScript support. The same
 script could be written like so:
 
-{% highlight coffee %}
+```coffee
 casper = require('casper').create()
 
 casper.start 'http://mohundro.com', () ->
@@ -47,7 +47,7 @@ casper.start 'http://mohundro.com', () ->
 
 casper.run () ->
   @test.renderResults true
-{% endhighlight %}
+```
 
 If you came out, I hope you enjoyed the talk. I've posted my slides and demos
 out on my [presentations Github

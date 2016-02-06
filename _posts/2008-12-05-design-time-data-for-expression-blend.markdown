@@ -17,7 +17,7 @@ As you can tell, I'm displaying a list of accounts by name and balance. The UI o
 
 Seriously, though, I've tried to structure this like I might a real application. I'm a huge fan of the [CompositeWPF library](http://codeplex.com/CompositeWPF) (*cough* Prism *cough*), so I'm using a Model-View-Presenter approach here, where the View is binding to a PresentationModel. You can see some examples of this in the StockTrader reference application that ships with CompositeWPF. The presenter's only job is to hook up the data binding to the view and then load the PresentationModel up with data from the service. (Note that it would be very easy to add threading support here so that, while pulling data from IService, we don't lock up the UI)
 
-{% highlight csharp %}
+```csharp
 public class Presenter
 {
     private readonly IView _view;
@@ -43,11 +43,11 @@ public class Presenter
             _presentationModel.Accounts.Add(acct);
     }
 }
-{% endhighlight %}
+```
 
 The PresentationModel only exposes an ObservableCollection of Accounts.
 
-{% highlight csharp %}
+```csharp
 public class PresentationModel
 {
     private readonly ObservableCollection&lt;Account&gt; _accounts = new ObservableCollection&lt;Account&gt;();
@@ -59,11 +59,11 @@ public class PresentationModel
         }
     }
 }
-{% endhighlight %}
+```
 
 The code for Window1.xaml is below.
 
-{% highlight xml %}
+```xml
 <Window
   x:Class="WpfApplication1.Window1"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -76,11 +76,11 @@ The code for Window1.xaml is below.
   <local:AccountDisplay
     DataContext="{Binding}" />
 </Window>
-{% endhighlight %}
+```
 
 I'm just tying the DataContext for my AccountDisplay UserControl to whatever Binding is set to the Window. This allows the data binding to just flow through the rest of the application. This is very flexible. But what about the code behind? It is pretty basic, too.
 
-{% highlight csharp %}
+```csharp
 public partial class Window1 : Window, IView
 {
     public Window1()
@@ -101,13 +101,13 @@ public partial class Window1 : Window, IView
 
     #endregion
 }
-{% endhighlight %}
+```
 
 The sample isn't using CompositeWPF, but if you're familiar with it, you should realize that it would be very easy to plug it in. In fact, my example is screaming Inversion of Control because of the Dependency Injection that I'm already using with the Presenter. A conversion to using the CompositeWPF would start with replacing the local declaration of the AccountDisplay user control with a region and associated module and you'll be well on your way.
 
 The real display is in AccountDisplay. Here is its source:
 
-{% highlight xml %}
+```xml
 <UserControl
   x:Class="WpfApplication1.AccountDisplay"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -152,7 +152,7 @@ The real display is in AccountDisplay. Here is its source:
 
   </ItemsControl>
 </UserControl>
-{% endhighlight %}
+```
 
 Here, I'm just using relative binding (Binding Path=Property) here. This means I'll pick up data binding from the DataContext, which was set back in Window1.xaml (once again, a result of that flowing data binding).
 
@@ -164,15 +164,15 @@ It... it looks really great. So... white and everything. Anyone know what the pr
 
 Here's what I'm doing to fix this right now. I added the following 3 lines of code to AccountDisplay.xaml.
 
-{% highlight xml %}
+```xml
 <local:Designer.DataContext>
   <local:BlendPresentationModel />
 </local:Designer.DataContext>
-{% endhighlight %}
+```
 
 That doesn't tell you much, so I'll show you the Designer class that is being referenced now.
 
-{% highlight csharp %}
+```csharp
 /// <summary>
 /// Allows the use of design-time only data binding... seems to only work
 /// in Blend and not the VS designer...
@@ -208,13 +208,13 @@ public static class Designer
         return element.DataContext;
     }
 }
-{% endhighlight %}
+```
 
 A few of things to note. I have a Dependency Property called DataContext first. I'm using a Dependency Property so that WPF data binding works. It can take any object (hence the typeof(object) parameter. When it changes, I call off to SetDataContext with the new value. Next important thing to note - DesignerProperties.GetIsInDesignMode. I try to cast the owner of my Designer instance (which is typically going to be a UserControl or Window or other UI element) to a FrameworkElement. I'm using FrameworkElement because it is the highest object in the hierarchy that provides the DataContext property. Then, if we're in Design mode, I override the DataContext with my Designer DataContext.
 
 In the XAML, what ends up getting set is a BlendPresentationModel, which looks like this:
 
-{% highlight csharp %}
+```csharp
 public class BlendPresentationModel : PresentationModel
 {
     public BlendPresentationModel()
@@ -236,7 +236,7 @@ public class BlendPresentationModel : PresentationModel
             Accounts.Add(acct);
     }
 }
-{% endhighlight %}
+```
 
 With my approach, I've created an object that inherits from my PresentationModel, so the object I'm binding my UI to is the same type that I'm using when running, but I'm providing test data instead. This is what it looks like in Blend now:
 

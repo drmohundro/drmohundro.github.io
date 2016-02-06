@@ -11,7 +11,7 @@ What I came up with was basically a GroupValidator class that took a control and
 
 Here's an example of usage:
 
-{% highlight vbnet %}
+```vb
 Public Class Form1
   Private _validator As New GroupValidator()
 
@@ -37,7 +37,7 @@ Public Class Form1
     MessageBox.Show(_validator.IsValid.ToString)
   End Sub
 End Class
-{% endhighlight %}
+```
 
 It is pretty simple as you can see. If you're interested in the code, drop a line and I'll email it or post it.
 

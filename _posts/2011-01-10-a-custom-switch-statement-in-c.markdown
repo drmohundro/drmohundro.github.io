@@ -15,7 +15,7 @@ C# versus VB.NET.
 It's true, actually. VB's `Select` statement is more powerful than the
 `switch` statement in C#. In VB.NET, you can do things like:
 
-{% highlight vbnet %}
+```vb
 Select Case num
   Case 1 to 10
     'do something
@@ -24,7 +24,7 @@ Select Case num
   Case Else
     'do the default
 End Select
-{% endhighlight %}
+```
 
 Whereas, this isn't possible in C# with the switch statement. However, that
 doesn't really bother me much.
@@ -38,7 +38,7 @@ take. This reminded me of switch statements in both Ruby and PowerShell.
 
 In Ruby, you've got the case statement:
 
-{% highlight ruby %}
+```ruby
 case some_var
   when nil
     # executes if some_var is null
@@ -53,21 +53,21 @@ case some_var
   else
     # the catch all
 end
-{% endhighlight %}
+```
 
 As you can see, the case statement in Ruby is *very* powerful.
 
 PowerShell's switch statement can take arguments (i.e. -wildcard, -regex,
 etc.) to let it match on different things. Like so:
 
-{% highlight powershell %}
+```powershell
 switch -regex ($a) { 
     "[a-d]" {"$a matches the first group."} 
     "[e-g]" {"$a matches the second group."} 
     "[h-k]" {"$a matches the third group."} 
     default {"$a didn't match any of the cases."}
 }
-{% endhighlight %}
+```
 
 So, when looking at all of these other switch statements, C#'s version does
 look sort of weak. But hey, we're programmers. Surely we can solve this
@@ -79,7 +79,7 @@ friend had sent an initial snippet that included a non-existent keyword called
 delegating off to lambdas. His proof of concept snippet looked like
 this:
 
-{% highlight csharp %}
+```csharp
 // this is *pseudocode* - it won't compile!
 swatch (myObject)
 {
@@ -93,7 +93,7 @@ swatch (myObject)
     Console.Writeline("the object's collection contains the 4 value");
     break;
 }
-{% endhighlight %}
+```
 
 So, I've got something to start with. How can I tweak this into valid C#? I
 began with writing the code that I wanted first. In other words, I'm designing
@@ -103,7 +103,7 @@ of the class first.
 
 Here's what I initially came up with:
 
-{% highlight csharp %}
+```csharp
 var accts = new List<Account>
                 {
                   new Account 
@@ -135,13 +135,13 @@ foreach (var acct in accts)
       x => Console.WriteLine("wha?!?"))
   );
 }
-{% endhighlight %}
+```
 
 The above syntax *can* work. We just need to implement the Switcher&lt;T&gt; class.
 
 Here it is, in its entirety:
 
-{% highlight csharp %}
+```csharp
 class Switcher<T>
 {
   public Decision Case(Predicate<T> condition, Action<T> branch)
@@ -172,7 +172,7 @@ class Switcher<T>
     public Action<T> Branch { get; set; }
   }
 }
-{% endhighlight %}
+```
 
 The code isn't complete - it doesn't do any checks to ensure that only one
 Default case is passed in. It also doesn't do anything to ensure that the

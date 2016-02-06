@@ -7,7 +7,7 @@ category: blog
 
 Here is a simple script I wrote which was inspired by [this post on terminal color highlighting](http://www.pixelbeat.org/docs/terminal_colours/) and by [ColorDiff](http://colordiff.sourceforge.net/) that does essentially the same thing.
 
-{% highlight powershell %}
+```powershell
 # Out-ColorDiff.ps1
 Process {
     if ($_) {
@@ -24,7 +24,7 @@ Process {
         }
     }
 } 
-{% endhighlight %}
+```
 
 Here is a screenshot of sample output from the script:
 

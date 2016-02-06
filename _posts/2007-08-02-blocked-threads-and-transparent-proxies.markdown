@@ -9,17 +9,17 @@ category: blog
 
 Given this:
 
-{% highlight csharp %}
+```csharp
 delegate void WorkDelegate();
 interface ISomeInterface
 {
   void Execute();
 }
-{% endhighlight %}
+```
 
 What is the difference between this class
 
-{% highlight csharp %}
+```csharp
 class TestCaseOne
 {
   ISomeInterface something = Activator.GetObject(typeof(ISomeInterface),
@@ -37,11 +37,11 @@ class TestCaseOne
     something.Execute();
   }
 }
-{% endhighlight %}
+```
 
 and this class?
 
-{% highlight csharp %}
+```csharp
 class TestCaseTwo
 {
   ISomeInterface something = Activator.GetObject(typeof(ISomeInterface),
@@ -61,7 +61,7 @@ class TestCaseTwo
     dlg.EndInvoke(iar);
   }
 }
-{% endhighlight %}
+```
 
 Both classes have a field named something that is a reference to an HTTP remoting proxy that has been published at [http://some.url.com](http://some.url.com). Let's assume that the the HTTP Remoting configuration has already been set up. Both call the Execute method defined on the interface, but one is using a BackgroundWorker for threading and the other is using the BeginInvoke/EndInvoke means of threading. Big deal, right?
 

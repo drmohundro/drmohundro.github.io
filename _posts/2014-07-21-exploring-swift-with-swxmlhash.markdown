@@ -23,7 +23,7 @@ While researching and reading up on Swift, I came across the [SwiftyJSON](https:
 
 For example, given the following JSON...
 
-{% highlight json %}
+```json
 {
   "title": "Swifty Example",
   "user": {
@@ -32,14 +32,14 @@ For example, given the following JSON...
   "site_admin": false
   }
 }
-{% endhighlight %}
+```
 
 It could read values out like so...
 
-{% highlight swift %}
+```swift
 let title = json["title"].string?
 let isAdmin = json["user"]["site_admin"].bool?
-{% endhighlight %}
+```
 
 What's especially fascinating (to me) is that the library represents each value (an instance of `JSONValue`) as an enum. Swift's enums are *far* more powerful than they are in the CLR. CLR enums are basically fancy wrappers around integers. Swift enums can represent any type, whether it be an int, float, string, or custom type.
 
@@ -57,7 +57,7 @@ It isn't complete by any means, but it does fully support array and dictionary i
 
 Given the following XML (which is a snippet of the [sample XML from MSDN's XML sample!](http://msdn.microsoft.com/en-us/library/ms762271\(v=vs.85\).aspx))...
 
-{% highlight xml %}
+```xml
 <root>
   <header>
     <title>Test Title Header</title>
@@ -89,11 +89,11 @@ Given the following XML (which is a snippet of the [sample XML from MSDN's XML s
     </book>
   </catalog>
 </root>
-{% endhighlight %}
+```
 
 The following parsing options are allowed...
 
-{% highlight swift %}
+```swift
 // begin parsing
 let xml = SWXMLHash.parse(xmlToParse)
 
@@ -108,7 +108,7 @@ xml["root"]["catalog"]["book"][1].element?.attributes["id"]
 
 // will return "Computer, Fantasy, Fantasy"
 ", ".join(xml["root"]["catalog"]["book"].all.map { elem in elem["genre"].element!.text! })
-{% endhighlight %}
+```
 
 There is still quite a bit of work to be done, but it does give me everything I need to parse the XML returned from my SOAP calls for now.
 

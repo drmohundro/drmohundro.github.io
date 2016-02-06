@@ -31,7 +31,7 @@ also makes the building step a lot easier.
 Once you start your project, you're presented with a WXS file pre-filled with a
 few initial options that looks like this:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Product Id="de9157d6-2fbf-4c16-9d28-77f790788b28" Name="WixProject1" Language="1033" Version="1.0.0.0" Manufacturer="WixProject1" UpgradeCode="f5614cd8-aa70-4bc4-948b-208b34e16a6d">
@@ -56,7 +56,7 @@ few initial options that looks like this:
         </Feature>
     </Product>
 </Wix>
-{% endhighlight %}
+```
 
 It has most of the things that you'll be interested in.
 
@@ -76,7 +76,7 @@ installation.)
 Before going further with your WiX file, I would strongly recommend refactoring
 some of the Guids and common strings out into variables like so:
 
-{% highlight xml %}
+```xml
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <?define ProductName = "WixProject1"?>
   <?define ProductCode = "de9157d6-2fbf-4c16-9d28-77f790788b28"?>
@@ -89,7 +89,7 @@ some of the Guids and common strings out into variables like so:
            Version="$(var.ProductVersion)"
            Manufacturer="WixProject1"
            UpgradeCode="$(var.UpgradeCode)">
-{% endhighlight %}
+```
 
 Doing this can help you greatly later when you're trying to figure out which
 Guid goes where or what the Guid is actually for. The rest of the process of
@@ -133,7 +133,7 @@ have an `UpgradeCode`, you can't upgrade.
 
 You'll use your UpgradeCode in an Upgrade tag like so:
 
-{% highlight xml %}
+```xml
 <Upgrade Id='$(var.UpgradeCode)'>
   <UpgradeVersion Minimum='$(var.ProductVersion)'
                   IncludeMinimum='no'
@@ -145,7 +145,7 @@ You'll use your UpgradeCode in an Upgrade tag like so:
                   IncludeMaximum='no'
                   Property='UPGRADEFOUND' />
 </Upgrade>
-{% endhighlight %}
+```
 
 Notice how I'm using my predefined variables. Makes it easier, eh? I've also
 added an additional variable defined as `RTMProductVersion`. This is the version
@@ -172,7 +172,7 @@ Once you have a new version and a new product code, you'll need to actually
 tell the MSI to remove the existing version. To do this, you'll add a
 `RemoveExistingProducts` element to an `InstallExecuteSequence`. Like this:
 
-{% highlight xml %}
+```xml
 <InstallExecuteSequence>
   <Custom Action='PreventDowngrading'
           After='FindRelatedProducts'>NEWPRODUCTFOUND</Custom>
@@ -186,7 +186,7 @@ tell the MSI to remove the existing version. To do this, you'll add a
 
 <CustomAction Id='PreventDowngrading'
               Error='Newer version already installed' />
-{% endhighlight %}
+```
 
 In my example, I've told `RemoveExistingProducts` to run after the
 `InstallFinalize` action, but [this is customizable and can have an impact on

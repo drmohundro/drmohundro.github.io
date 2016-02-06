@@ -11,7 +11,7 @@ At the time, I was pretty annoyed with it, because this individual was bragging 
 
 The projects that have turned out best that I've worked on the ones where I was really proud of the code. That doesn't mean I did it the right way. I'm thinking of one example where I wrote this crazy elaborate dynamic menu system in JavaScript. It even worked in both Firefox and Internet Explorer. It had a full blown object model and made use of closures and more - it was great. Here's a complete example of usage of the menu:
 
-{% highlight html %}
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -31,7 +31,7 @@ nav.buildMenu();
 </script>
 </body>
 </html>
-{% endhighlight %}
+```
 
 It had one problem. Maintenance. Maintenance on the system will be nigh impossible for the next guy. From the very beginning, I should have used CSS for the entire menu structure. When and if someone ever decides to change the way the menus look, well... good luck. However, it was still a good experience. I learned more about the inner workings of JavaScript from working with that than I did from any blog post or book I've ever looked at. I would have never learned what exactly 'this' references in JavaScript without that example (see [this post on JavaScript gotchas](http://www.fitzblog.com/tabid/17782/bid/2127/Nine-Javascript-Gotchas.aspx) and refer to the section on 'this').
 

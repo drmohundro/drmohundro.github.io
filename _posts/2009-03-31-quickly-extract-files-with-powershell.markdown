@@ -27,7 +27,7 @@ The script assumes that you've aliased 'zip' to the 7z.exe command line executab
 
 Here's the script:
 
-{% highlight powershell %}
+```powershell
 param (
     [string]$file,
     [string]$outputDir = ''
@@ -42,7 +42,7 @@ if ($outputDir -eq '') {
 }
 
 zip e "-o$outputDir" $file
-{% endhighlight %}
+```
 
 Like I said, pretty basic. If you don't specify an output directory, it uses the name of the file.
 

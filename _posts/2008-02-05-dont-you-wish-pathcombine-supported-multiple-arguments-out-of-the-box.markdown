@@ -7,19 +7,19 @@ category: blog
 
 I've found myself wishing that I could pass in more than two arguments to Path.Combine. That is, something like this:
 
-{% highlight csharp %}
+```csharp
 Path.Combine(rootPath, someCalculatedPath, someKnownFileName);
-{% endhighlight %}
+```
 
 As it is, Path.Combine only accepts two arguments, so I end up with calls that look like this:
 
-{% highlight csharp %}
+```csharp
 Path.Combine(Path.Combine(rootPath, comeCalculatedPath), someKnownFileName);
-{% endhighlight %}
+```
 
 It seems like a hassle to me. Here is a simple wrapper function (with accompanying test) that will accomplish this:
 
-{% highlight csharp %}
+```csharp
 public static class FileUtils
 {
     public static string CombinePaths(params string[] paths)
@@ -41,5 +41,5 @@ public class FileUtilsTests
         Assert.AreEqual(expected, FileUtils.CombinePaths("c:\\some", "path\\to", "file.txt"));
     }
 }
-{% endhighlight %}
+```
 

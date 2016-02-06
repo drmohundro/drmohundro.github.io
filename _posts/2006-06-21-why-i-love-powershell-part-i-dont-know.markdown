@@ -7,9 +7,9 @@ category: blog
 
 Check out this snippet:
 
-{% highlight powershell %}
+```powershell
 dir -recurse -include tempproj.proj | foreach { rm $_ }
-{% endhighlight %}
+```
 
 Awesome!
 

@@ -15,19 +15,19 @@ Taking a look at Mutex, I see that it implements [IDisposable](http://msdn2.micr
 
 My first try:
 
-{% highlight csharp %}
+```csharp
 bool createdNew;
 using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
 {
   MessageBox.Show("Press OK to release the mutex.");
 }
-{% endhighlight %}
+```
 
 Looks good, right? Nope, that is a big negative. Nowhere does this actually acquire the mutex. When you run this application twice, they both show the message box just fine. Maybe I should actually check the createdNew value?
 
 Let's change the code to look like this:
 
-{% highlight csharp %}
+```csharp
 bool createdNew;
 using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
 {
@@ -35,20 +35,20 @@ using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
     mtx.WaitOne();
   MessageBox.Show("Press OK to release the mutex.");
 }
-{% endhighlight %}
+```
 
 However, that didn't work, either. It turns out that the createdNew parameter just tells you if you're the one who created the mutex, <em>not</em> if you currently own the mutex. That is what the purpose for the [WaitOne](http://msdn2.microsoft.com/en-us/library/system.threading.mutex.waitone.aspx) method is for. Of course, the documentation just says that it "blocks the current thread until the current WaitHandle receives a signal." Okay. Well, I'm glad that I now know that it also waits for my thread to acquire a lock on the mutex. (note, if you pass in 'true' as the first parameter, you'll <em>request</em> to be the owner, but you'll only be the owner if the createdNew out parameter comes back with true)
 
 Third try. Third time's the charm, right?
 
-{% highlight csharp %}
+```csharp
 bool createdNew;
 using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
 {
   mtx.WaitOne();
   MessageBox.Show("Press OK to release the mutex.");
 }
-{% endhighlight %}
+```
 
 Great, now when I run my app twice, the second one is blocking on the WaitOne call. Cool. You can even tell in the below screenshot, because the button's paint event is blocked and is whiting out (like Solitaire does when you win!).
 
@@ -60,7 +60,7 @@ Let's click okay and see if the second form gets the mutex, thus displaying the 
 
 Ouch! That was unexpected. What? Abandoned mutex? This sounds like I never even released the mutex. Hmmm... [ReleaseMutex](http://msdn2.microsoft.com/en-us/library/system.threading.mutex.releasemutex.aspx)? Shouldn't that be called from the Dispose (end of the Using block)? Might as well try it.
 
-{% highlight csharp %}
+```csharp
 bool createdNew;
 using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
 {
@@ -75,7 +75,7 @@ using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
     mtx.ReleaseMutex();
   }
 }
-{% endhighlight %}
+```
 
 Finally! Now, it works like I'm wanting. I'm keeping the using block in place, because that disposes the WaitHandle that Mutex uses (Mutex in face inherits from WaitHandle).
 

@@ -9,7 +9,7 @@ After some <strike>severe frustration</strike> research, I was able to discover 
 
 Here, I'll show you how!
 
-{% highlight vbnet %}
+```vb
 Public Class Form1
   Public Shared Sub Main()
     Application.Run(New Form1)
@@ -50,7 +50,7 @@ Public Class Form1
     End Property
   End Class
 End Class
-{% endhighlight %}
+```
 
 There, that was easy, huh? (In case you're not seeing it, look for the CRASHHERE note.)
 

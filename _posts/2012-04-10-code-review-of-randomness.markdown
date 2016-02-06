@@ -27,7 +27,7 @@ having the team take just 10 minutes to look over it.
 The solution was a PowerShell script that I whipped together in about 15
 minutes. Here it is:
 
-{% highlight powershell %}
+```powershell
 param (
     $fileType = "cs",
     $directoryToSearch = "c:\path\to\source\repo"
@@ -63,7 +63,7 @@ $randomlySelectedFile  = allFilesOfType | Get-Random -count 1 | select -expand F
 & $editor $randomlySelectedFile
 
 Pop-Location
-{% endhighlight %}
+```
 
 As you can see, it is pretty basic. Most of the complexity involves excluding
 Designer or generated files. Once the script determines a random file, it

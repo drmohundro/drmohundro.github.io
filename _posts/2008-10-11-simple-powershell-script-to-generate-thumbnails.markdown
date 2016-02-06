@@ -9,7 +9,7 @@ I was working with a lot of images for a website today and I needed to quickly c
 
 Anyway, here it is:
 
-{% highlight powershell %}
+```powershell
 get-childitem *.jpg | foreach {
   $full = [System.Drawing.Image]::FromFile("$(resolve-path $)");
   $thumb = $full.GetThumbnailImage(72, 72, $null, [intptr]::Zero);
@@ -17,7 +17,7 @@ get-childitem *.jpg | foreach {
   $full.Dispose();
   $thumb.Dispose();
 }
-{% endhighlight %}
+```
 
 Obviously, you likely wouldn't hardcode the height and width for the thumbnail, but would probably base it off of the original image (i.e. varying it off of whether the image was wide or tall). But, I didn't need to. That's up to you to figure out :-)
 

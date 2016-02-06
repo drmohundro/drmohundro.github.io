@@ -13,7 +13,7 @@ Does it include today if it is morning, but if it is evening, we'll start with
 tomorrow? As I said, I'm sure I'm overanalyzing.
 
 In any event, I have discovered that I can easily use PowerShell to calculate
-dates for me. For the last few years, I've been using code like 
+dates for me. For the last few years, I've been using code like
 `([datetime]'1/2/2013').AddDays(3)` to help me figure out what day something
 would be.
 
@@ -24,7 +24,7 @@ stress.
 
 So, I turn to PowerShell. Behold, the `Get-DevLunchDays.ps1` script:
 
-{% highlight powershell %}
+```powershell
 $initialDate = [datetime]'2013/1/8'
 
 $rollingDate = $initialDate
@@ -33,7 +33,7 @@ do {
     Write-Host $rollingDate.ToShortDateString()
     $rollingDate = $rollingDate.AddDays(21)
 } until ($rollingDate -ge [datetime]'2013/12/31')
-{% endhighlight %}
+```
 
 I've hardcoded an initial date in the `$initialDate` variable and then I just
 script out the rest. Sure, it's simple, but it saves me time and stress!

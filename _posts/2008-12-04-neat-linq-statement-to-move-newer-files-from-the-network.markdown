@@ -7,7 +7,7 @@ category: blog
 
 Thought I'd share the below LINQ statement I wrote recently:
 
-{% highlight csharp %}
+```csharp
 var filesToBeMoved =
     from networkFile in network
     join localFile in local
@@ -21,7 +21,7 @@ var filesToBeMoved =
 
 foreach (var file in filesToBeMoved)
     file.MoveTo(_directoryProvider.LocalDirectory);
-{% endhighlight %}
+```
 
 In this case, the files that are being returned are actually IFileProvider instances, which are basically wrappers around the `System.IO.File` instances for testability.
 

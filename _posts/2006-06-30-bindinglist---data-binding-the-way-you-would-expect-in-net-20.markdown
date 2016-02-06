@@ -17,14 +17,14 @@ Well, not so!
 
 [Dinesh Chandnani](http://blogs.msdn.com/dchandnani/) posted to his MSDN blog over a year ago about this subject. Too bad I didn't find it until today. In his [post](http://blogs.msdn.com/dchandnani/archive/2005/03/12/394438.aspx), he provides some very simple code examples, one of which details how to get a "DataGridView bound to business objects." __\*gasp!\*__ Where have I been? This is what his code looks like:
 
-{% highlight csharp %}
+```csharp
 DataGridView dgv = new DataGridView();
 BindingSource bs = new BindingSource();
 BindingList<Customer> bList = new BindingList<Customer>();
 // Fill bList with Customers
 bs.DataSource = bList;
 dgv.DataSource = bs;
-{% endhighlight %}
+```
 
 I wish I known about the System.ComponentModel.BindingList&lt;T&gt; before now. It would've saved me so much time. If you're still trying to bind to a List or Collection like I was, take that guy out and bind to the BindingList instead! It really works the way you would expect it to!
 

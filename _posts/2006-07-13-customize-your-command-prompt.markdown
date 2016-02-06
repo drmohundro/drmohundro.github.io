@@ -11,13 +11,13 @@ Scott's tip about customizing your prompt (from c:\dir\&gt; to whatever) was rea
 
 The PROMPT environment variable trick doesn't work for the PowerShell prompt, but after a little digging around with Google, I discovered [this post from Lee Holmes](http://www.leeholmes.com/blog/GettingStartedCustomizeYourPrompt.aspx) about the prompt function. If you have a function named prompt declared, PowerShell will use the value returned by that function to alter the display of your prompt. Here's my prompt function, which I have saved in PowerShell profile so that it will load every time (mine is located here C:\Documents and Settings\David\My Documents\PSConfiguration\Microsoft.PowerShell_profile.ps1)
 
-{% highlight powershell %}
+```powershell
 # Initialize custom prompt
 function prompt
 {
   "PS " + (get-location).Path + [System.Environment]::NewLine + ">".PadLeft((get-location -stack).Count + 1, "+")
 }
-{% endhighlight %}
+```
 
 The only thing I haven't figured out yet is how to get a visual indication of how far in the stack you are (by using pushd and popd). Once I figure that out, I'll have a PowerShell prompt customized just like my cmd prompt!
 

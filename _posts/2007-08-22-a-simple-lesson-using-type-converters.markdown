@@ -7,7 +7,7 @@ category: blog
 
 I found myself writing the following code this evening:
 
-{% highlight csharp %}
+```csharp
 public T GetItem<T>(string name)
 {
   string result = node.SelectSingleNode(name).InnerText.Trim();
@@ -26,15 +26,15 @@ private TypeConverter GetConverter(Type objectType)
   else
     throw new ArgumentException("Does not support casting to " + objectType.Name);
 }
-{% endhighlight %}
+```
 
 Don't ever write code like this. [Read the documentation](http://msdn2.microsoft.com/en-us/library/system.componentmodel.booleanconverter.aspx) which explicitly says that "you should never create an instance of a BooleanConverter". If you follow their advice, your code will become much cleaner. Like so:
 
-{% highlight csharp %}
+```csharp
 public T GetItem<T>(string name)
 {
   string result = node.SelectSingleNode(name).InnerText.Trim();
   return (T)TypeDescriptor.GetConverter(typeof(T)).ConvertFromString(result);
 }
-{% endhighlight %}
+```
 

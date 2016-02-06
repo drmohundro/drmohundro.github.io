@@ -7,7 +7,7 @@ category: blog
 
 Let's say you have the following class:
 
-{% highlight vbnet %}
+```vb
 Public Class Person
   Private _name As String
 
@@ -27,11 +27,11 @@ Public Class Person
     RaiseEvent NameChanged(Me, e)
   End Sub
 End Class
-{% endhighlight %}
+```
 
 We've set up the [Property]Changed events so that DataBinding will work correctly. Now, let's assume you want to bind the name property over to the text property of your TextBox control. We'll go the simple data binding route here for simplicity.
 
-{% highlight vbnet %}
+```vb
 Public Class Form1
   Private txtName As New TextBox
   Private _person As New Person
@@ -51,23 +51,23 @@ Public Class Form1
     _person.Name = "clicked"
   End Sub
 End Class
-{% endhighlight %}
+```
 
 There! Now the txtName will display "clicked" whenever you click on the form. Magic! Now, let's change that Click event like so to see what happens:
 
-{% highlight vbnet %}
+```vb
 Private Sub Form_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Click
   Dim newPerson As New Person
   newPerson.Name = "new person"
   _person = newPerson
 End Sub
-{% endhighlight %}
+```
 
 Why would I ever want to do is this way? Well, let's say you're remoting somewhere to get your data and your background thread returns a fully populated object. The easiest thing to do is to just point to the new object... except that it doesn't work.
 
 All we did was change our instance over, but the textbox never changed. Why not? Because of REFERENCES, POINTERS, and MEMORY ADDRESSES! That's why! Check this out:
 
-{% highlight vbnet %}
+```vb
 Private Sub Form_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Click
   Dim newPerson As New Person
   newPerson.Name = "new person"
@@ -76,7 +76,7 @@ Private Sub Form_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Me.
   _person = newPerson
   Debug.WriteLine("Are references equal? " & Object.ReferenceEquals(txtName.DataBindings("Text").DataSource, _person))
 End Sub
-{% endhighlight %}
+```
 
 Whoa! The first Debug.Writeline will give you TRUE, but the second will give you FALSE. You see, understanding how references and pointers work is important. The textbox's DataSource is holding onto a reference of the old Person instance. You now have two different instances in memory, whether you like it or not.
 

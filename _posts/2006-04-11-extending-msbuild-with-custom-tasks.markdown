@@ -15,7 +15,7 @@ First off, create a new Class Library project in Visual Studio. You'll need to a
 
 Here's the source for my Replace task:
 
-{% highlight csharp %}
+```csharp
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 
@@ -78,11 +78,11 @@ namespace Tasks
     }
   }
 }
-{% endhighlight %}
+```
 
 The XML below is how I'm currently using this task.
 
-{% highlight xml %}
+```xml
 <UsingTask TaskName="Tasks.Replace" AssemblyFile="C:\Development\References\MSBuildTasks.dll" />
 <PropertyGroup>
 <RootDirectory>C:\Development\Build\</RootDirectory>
@@ -96,7 +96,7 @@ The XML below is how I'm currently using this task.
 </CreateItem>
 <Copy SourceFiles="@(FilesToArchive)" DestinationFolder="$(RootDirectory)$(NamespaceDirectories)\%(FilesToArchive.RecursiveDir)" />
 </Target>
-{% endhighlight %}
+```
 
 As you can see, I've got the UsingTask which references the assembly I built. Then you can use the Replace task like any other provided task. The above exactly can be copied into a Visual Studio project and it will copy the output files from your build into the RootDirectory you specify with the root namespace making up the folders beneath it (i.e. give the namespace System.Windows.Forms, this will copy your compiled assemblies to c:\Development\Build\System\Windows\Forms\*).
 

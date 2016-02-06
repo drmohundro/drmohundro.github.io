@@ -9,9 +9,9 @@ This may not be new for everyone, but I just learned it today. In webpages, to s
 
 In .NET, there is a focus method off of controls, but it doesn't work if the control isn't visible... i.e. in the constructor or in the Load event. To get around this, use the ActiveControl property off of the Form or UserControl, like so:
 
-{% highlight vbnet %}
+```vb
 Me.ActiveControl = Me.txtTo
-{% endhighlight %}
+```
 
 Not too bad, eh? In this example, Me.txtTo will have focus when the Form or UserControl is displayed. Just make sure it is in the Load event. It didn't seem to work for me in the constructor (even after the InitializeComponent call). Of course, I only tried it once...
 

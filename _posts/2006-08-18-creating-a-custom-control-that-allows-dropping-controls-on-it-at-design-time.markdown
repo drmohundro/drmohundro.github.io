@@ -13,7 +13,7 @@ What research I came up with looked like I would have to create my own custom de
 
 Here's a code snippet to give you an idea of what I did:
 
-{% highlight vbnet %}
+```vb
 <Designer(GetType(AutoResizeGroupBoxDesigner))> _
 Public Class AutoResizeGroupBox
     <DesignerSerializationVisibility(DesignerSerializationVisibility.Content)> _
@@ -35,5 +35,5 @@ Public Class AutoResizeGroupBoxDesigner
         EnableDesignMode(autoGroupBox.FlowPanel, "FlowPanel")
     End Sub
 End Class
-{% endhighlight %}
+```
 

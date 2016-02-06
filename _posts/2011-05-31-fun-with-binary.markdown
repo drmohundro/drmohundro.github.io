@@ -40,28 +40,28 @@ spec has.
 
 First, in hex:
 
-{% highlight text %}
+```text
 0000   de 39 00 50 d5 99 75 e4 02 50 89 dc 50 18 01 01  .9.P..u..P..P...
 0010   cc 87 00 00                                      ....
-{% endhighlight %}
+```
 
 Then, in binary:
 
-{% highlight text %}
+```text
 0000   11011110 00111001 00000000 01010000 11010101 10011001 01110101 11100100   .9.P..u.
 0008   00000010 01010000 10001001 11011100 01010000 00011000 00000001 00000001   .P..P...
 0010   11001100 10000111 00000000 00000000                                       ....
-{% endhighlight %}
+```
 
 (for those who are curious, I got this data from Wireshark)
 
 Of course, I wasn't provided my bytes in such a pretty format... byte arrays
 are going to look a lot more like this:
 
-{% highlight text %}
+```text
 0xde, 0x39, 0x00, 0x50, 0xd5, 0x99, 0x75, 0xe4, 0x02, 0x50, 0x89, 0xdc, 
 0x50, 0x18, 0x01, 0x01, 0xcc, 0x87, 0x00, 0x00
-{% endhighlight %}
+```
 
 ## The Naive (and horribly non-performant) Way
 
@@ -74,16 +74,16 @@ Given the above byte array, all it took was the below snippet of Powershell
 (note that I used the 0x prefix with the hex values... there isn't any binary
 literal notation):
 
-{% highlight powershell %}
+```powershell
 $bytes = [byte[]](0xde, 0x39, 0x00, 0x50, 0xd5, 0x99, 0x75, 0xe4, 0x02,
                   0x50, 0x89, 0xdc, 0x50, 0x18, 0x01, 0x01, 0xcc, 0x87, 
                   0x00, 0x00)
-{% endhighlight %}
+```
 
 Now that we've got a byte array, we can start to play around with it. I
 created the following script that I named Get-ByteTable.ps1:
 
-{% highlight powershell %}
+```powershell
 param (
   [Parameter(ValueFromPipeline=$true)]
   [byte]
@@ -143,7 +143,7 @@ process {
 }
 
 end {}
-{% endhighlight %}
+```
 
 Basically, the usage is just `$bytes | Get-ByteTable.ps1`. Now, the issue then
 is output formatting... that just dumps the list of PSObjects out and the
@@ -157,7 +157,7 @@ Excel, you could pipe the output to `Export-Csv`.
 
 Check out the below sample output:
 
-{% highlight text %}
+```text
 > $bytes | Get-ByteTable.ps1 -rowlength 32 | Format-Table -AutoSize -Property *
 
 Offset Hex        0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
@@ -166,7 +166,7 @@ Offset Hex        0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 
     32 0xD59975E4 1 1 0 1 0 1 0 1 1 0 0  1  1  0  0  1  0  1  1  1  0  1  0  1  1  1  1  0  0  1  0  0
     64 0x025089DC 0 0 0 0 0 0 1 0 0 1 0  1  0  0  0  0  1  0  0  0  1  0  0  1  1  1  0  1  1  1  0  0
     96 0x50180101 0 1 0 1 0 0 0 0 0 0 0  1  1  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1
-{% endhighlight %}
+```
 
 We can use this table to line up our values with what we saw from the TCP
 header protocol. For example, bits 0-15 make up our source port. In the table
@@ -194,7 +194,7 @@ in a tabular structure, too. Actually treating the one array in a tabular way
 is easy (i.e. rowLength * rowIndex + columnIndex = actualIndex) and is best
 served via extension methods as shown below:
 
-{% highlight csharp %}
+```csharp
 // Note that I've set a constant BYTE_LENGTH below, which effectively
 // serves as the row length... it would be easy enough to specify a 
 // different row length via another parameter.
@@ -218,11 +218,11 @@ internal static class Extensions
     bits.Set(startIndex + columnIndex, value);
   }
 }
-{% endhighlight %}
+```
 
 Usage then would be:
 
-{% highlight csharp %}
+```csharp
 // assume bytes is an already populated byte array.
 var bits = new BitArray(bytes);
 
@@ -231,7 +231,7 @@ var bit = bits.GetRowBits(0).ElementAt(4);
 
 // to set the bit at 5,4 ON
 bits.Set(5, 4, true);
-{% endhighlight %}
+```
 
 I'm not particularly happy with the method names and I haven't come up with a
 great way to specify the row length... as it stands now, my extensions are

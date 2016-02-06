@@ -11,7 +11,7 @@ Here is one that caused mass confusion recently.
 
 Check out the code for this incredibly simple console application that I wrote:
 
-{% highlight vbnet %}
+```vb
 Module Module1
 
   Sub Main()
@@ -30,7 +30,7 @@ Module Module1
   End Sub
 
 End Module
-{% endhighlight %}
+```
 
 What would you expect the output to be?
 

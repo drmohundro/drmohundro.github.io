@@ -9,14 +9,14 @@ In case you've been under a rock recently, Visual Studio 2008 was released recen
 
 Check out the below C# snippet:
 
-{% highlight csharp %}
+```csharp
 TryTimes(() =>
 {
   Console.WriteLine("hi there.");
   throw new Exception("haha");
   Console.WriteLine("hi there after .");
 }, 5);
-{% endhighlight %}
+```
 
 This is the prototype for the usage of a function that could try an operation a certain number of times and then fail if the operation didn't succeed after N number of tries. Obviously, the above code sample will fail every time, but the idea could work alright for file I/O if you're unsure if anyone else might have locks on the file.
 

@@ -9,25 +9,25 @@ I'm not sure how often people run into situations where the ManualResetEvent is 
 
 It is easiest to explain with some code snippets. Here's how you create the ManualResetEvent.
 
-{% highlight vbnet %}
+```vb
 Private dataLock As New ManualResetEvent(False)
-{% endhighlight %}
+```
 
 To wait on the signal, use this code:
 
-{% highlight vbnet %}
+```vb
 _dataLock.WaitOne()
-{% endhighlight %}
+```
 
 Once your background work is completed, you can call Set like so:
 
-{% highlight vbnet %}
+```vb
 _dataLock.Set()
-{% endhighlight %}
+```
 
 Here's a full code sample that shows how it would work and also gives a short example on the BackgroundWorker.
 
-{% highlight vbnet %}
+```vb
 Imports System.ComponentModel
 Imports System.ThreadingModule Module1
 
@@ -73,7 +73,7 @@ End Sub
 Private Sub Write(ByVal s As String)
   Console.WriteLine(String.Format("Thread: {0}, Message: {1}", Thread.CurrentThread.Name, s))
 End Sub
-{% endhighlight %}
+```
 
 The output from running looks like this:
 
