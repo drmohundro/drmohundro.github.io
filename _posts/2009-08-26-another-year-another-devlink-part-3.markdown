@@ -14,7 +14,7 @@ Strikes Back"](/blog/2009/08/25/another-year-another-devlink-part-2/) and "the
 Return of devLink." The true test will be to see if the second post is
 everyone's favorite. 
 
-![Obligatory Ewoks for the 3rd movie... errr post.](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart3_BC80/image_3.png)
+![Obligatory Ewoks for the 3rd movie... errr post.](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart3_BC80/image_3.png)
 
 Oh well. Maybe next year. 
 

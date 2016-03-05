@@ -11,7 +11,7 @@ really changed much from when I gave the [PowerShell
 talk](/blog/2008/09/09/powershell-fsdnug-presentation-with-slides-and-notes/)
 to the [FSDNUG](http://fsdnug.org) group. So, I'll just link to the [zip of
 the presentation from that
-talk](https://s3.amazonaws.com/mohundro/blog/2008-09-08-fsdnug-powershell-presentation.zip). 
+talk](/images/blog/2008-09-08-fsdnug-powershell-presentation.zip). 
  
 The primary slide that I added to my presentation was entirely related to a
 [StackOverflow](http://stackoverflow.com/) question entitled, "[how do you

@@ -9,7 +9,7 @@ Last year at DevLink, I can clearly recall sitting in a session about Durandal a
 
 We were about halfway into his presentation when I received the following text from my wife:
 
-<img src="https://s3.amazonaws.com/mohundro/blog/2014-04-01-nora-text.png" style="float: left; padding-right: 20px" alt="Text message about Nora" />
+<img src="/images/blog/2014-04-01-nora-text.png" style="float: left; padding-right: 20px" alt="Text message about Nora" />
 
 As you can see in the text, I was shocked to say the least. We had taken our initial adoption class about three years earlier, but we hadn't made any progress during that time. In fact, we ended up [having our firstborn daughter](/blog/2011/06/24/introducing-daila-joy/) *during* our waiting period for adoption.
 
@@ -23,4 +23,4 @@ We've now spent the last 6 (almost 7) months getting to know this little girl. S
 
 Less than a month ago, we were able to finalize on our adoption! Now, Nora is officially a "Mohundro" (or "My-hundro" as Daila likes to say)!
 
-![Nora's Adoption Day](https://s3.amazonaws.com/mohundro/blog/2014-04-01-noras-adoption-day.jpg)
+![Nora's Adoption Day](/images/blog/2014-04-01-noras-adoption-day.jpg)

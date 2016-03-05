@@ -11,7 +11,7 @@ A few things have remained relatively constant, though, such as a command line.
 
 And war... war never changes... (that's a [Fallout reference](http://fallout.wikia.com/wiki/Fallout_intro)!)
 
-![War Never Changes](https://s3.amazonaws.com/mohundro/blog/2014-10-04-fallout.gif)
+![War Never Changes](/images/blog/2014-10-04-fallout.gif)
 
 But I digress.
 
@@ -181,4 +181,4 @@ You might think I'd stick with `Find-String` given that I wrote it, but you'd be
 
 If you spot any inaccuracies or have other thoughts, let me know!
 
-![Enjoy Your Stay!](https://s3.amazonaws.com/mohundro/blog/2014-10-04-fallout-enjoy-your-stay.gif)
+![Enjoy Your Stay!](/images/blog/2014-10-04-fallout-enjoy-your-stay.gif)

@@ -70,7 +70,7 @@ post-it note, wrote their topic down, announced their name and topic to the
 group, and then chose a timeslot. This process continued until the board was
 full and, after reorganizing or combining sessions, we broke off for lunch. 
 
-![Open Spaces talks](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/devLink2008Recap_E937/image4.png)
+![Open Spaces talks](/images/blog/WindowsLiveWriter/devLink2008Recap_E937/image4.png)
 
 The first session I attended was a conglomeration of three (or was it four?)
 topics into one that I'll just entitle "Good Enough." Yeah, like the theme.
@@ -94,7 +94,7 @@ Wren](http://jrwren.wrenfam.com/blog/) in on a conference call because he had
 been using bazaar successfully. I wouldn't believe it if I were you, so here is
 a picture as proof :-) 
 
-![Conference call with Jay](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/devLink2008Recap_E937/image_7.png)
+![Conference call with Jay](/images/blog/WindowsLiveWriter/devLink2008Recap_E937/image_7.png)
 
 The next two talks all involved lots of D's. The first was "What \*DD is" and
 the second was "How 'Should' Changed my Life." If you've been following
@@ -115,7 +115,7 @@ his experiences with BDD and Ruby, I think I need to write some Ruby code. I'm
 sold on the benefits that these practices provide, but it is hard trying to
 practice them when you're the one guy on the team who is sold on the practice. 
 
-![What is *DD?](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/devLink2008Recap_E937/image8.png)
+![What is *DD?](/images/blog/WindowsLiveWriter/devLink2008Recap_E937/image8.png)
 
 All in all, the Open Spaces part of devLink was my favorite part of the
 conference. [Alan Stevens](http://netcave.org/) organized the Open Spaces side

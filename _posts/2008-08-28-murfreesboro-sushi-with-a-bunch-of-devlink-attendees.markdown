@@ -5,7 +5,7 @@ date: 2008/08/28
 category: blog
 ---
 
-![Eating at Aya Sushi](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/MurfreesboroSushiwithabunchofDevLinkatte_12C4C/devlink2008-ayasushi_2.jpg)
+![Eating at Aya Sushi](/images/blog/WindowsLiveWriter/MurfreesboroSushiwithabunchofDevLinkatte_12C4C/devlink2008-ayasushi_2.jpg)
 
 I told you we had [sushi](http://www.myspace.com/ayasushi) while at DevLink! We're happy in this picture because we all had just had a great dinner :-) (that, and they told us to be goofy for the picture) 
 

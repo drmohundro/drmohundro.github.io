@@ -7,7 +7,7 @@ category: blog
 
 Ever seen this error in Visual Studio 2005?
 
-![Designer Error](https://s3.amazonaws.com/mohundro/blog/2006-04-14-designer-error.gif)
+![Designer Error](/images/blog/2006-04-14-designer-error.gif)
 
 I've seen it all too often and it is really annoying.
 

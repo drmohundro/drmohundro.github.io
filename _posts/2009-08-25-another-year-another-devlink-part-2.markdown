@@ -95,7 +95,7 @@ everyone else was sitting in the floor. Most had laptops, but a few were
 looking over shoulders. If I can find a picture, I'll post it - a picture would
 communicate this a lot better than I can. 
 
-![Impromptu Rails Session](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart2_F5A9/image_3.png)
+![Impromptu Rails Session](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart2_F5A9/image_3.png)
 
 UPDATE: thanks to [Matt Brewer](http://mattbrewer.mp/) for providing a link to
 the above picture of the impromptu Rails learning session with Leon - and

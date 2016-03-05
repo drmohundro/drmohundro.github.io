@@ -32,7 +32,7 @@ that we use every day without even thinking? Here's an image from Wikipedia
 that shows the structure for the TCP header (via
 [Wikipedia](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)):
 
-![TCP Header](https://s3.amazonaws.com/mohundro/blog/2011-05-31-tcp-header.png)
+![TCP Header](/images/blog/2011-05-31-tcp-header.png)
 
 For fun, let's assume that that we've been provided the below data and we'd
 like to parse this into a structure that looks more like the table the TCP
@@ -173,7 +173,7 @@ header protocol. For example, bits 0-15 make up our source port. In the table
 above, those bits come out to be 1101111000111001... or 56889 in decimal. This
 lines up with what we can see in Wireshark, so our script works as expected.
 
-![Wireshark's TCP view](https://s3.amazonaws.com/mohundro/blog/2011-05-31-wireshark-tcp.png)
+![Wireshark's TCP view](/images/blog/2011-05-31-wireshark-tcp.png)
 
 ## The Better (and more Programmatic) Way
 
@@ -244,14 +244,14 @@ methods.
 The final thing I wanted to share is some calc.exe awesomeness. First, ensure
 that you're running calc.exe in "Programmer" mode.
 
-![Calc in Programmer Mode](https://s3.amazonaws.com/mohundro/blog/2011-05-31-calc-programmer-mode.png)
+![Calc in Programmer Mode](/images/blog/2011-05-31-calc-programmer-mode.png)
 
 Next, let's start in Dec (decimal) mode and type in 255. Of course, you can
 change between decimal, hex, octal or binary and see the resultant numbers.
 This didn't surprise me. However, notice the the section beneath the number
 display, where it shows the binary for your number.
 
-![Calc binary display](https://s3.amazonaws.com/mohundro/blog/2011-05-31-calc-binary-display.png)
+![Calc binary display](/images/blog/2011-05-31-calc-binary-display.png)
 
 Try clicking one of the bits. It's awesome.
 

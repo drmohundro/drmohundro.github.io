@@ -16,7 +16,7 @@ we're more prepared than we would've been!)
 
 Here's a photo that I took of her a few days ago:
 
-![Daila Joy](https://s3.amazonaws.com/mohundro/blog/2011-06-24-daila-joy.jpg)
+![Daila Joy](/images/blog/2011-06-24-daila-joy.jpg)
 
 Highlights thus far:
 

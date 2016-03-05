@@ -7,7 +7,7 @@ category: blog
 
 A few days ago, I was working in Visual Studio 2005 and I was getting awful performance out of it. I decided to pull up [Process Explorer](http://www.sysinternals.com/Utilities/ProcessExplorer.html) to see if I could determine where the problem was. I right-clicked on devenv.exe and pulled up its properties and went to the .NET tab. You can then use the combo box to select different .NET performance measures. Here's what I found:
 
-![Visual Studio Screenshot](https://s3.amazonaws.com/mohundro/blog/2005-03-16-devenv.png)
+![Visual Studio Screenshot](/images/blog/2005-03-16-devenv.png)
 
 As you can see with my hastily scribbled red circle and arrow, I'm attempting to draw your attention to the 65.94 number. It is telling me that devenv.exe was spending about 66% of its time in doing garbage collection.
 

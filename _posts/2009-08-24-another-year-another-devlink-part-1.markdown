@@ -38,13 +38,13 @@ command prompt and go to the directory where you extracted ruby\_koans. Once in
 that directory, run rake (rake is to ruby as make is to C or as nant/msbuild is
 to C#/VB.NET). 
 
-![Running Ruby Koans](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image_8.png)
+![Running Ruby Koans](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image_8.png)
 
 The rake file changes the directory to the koans directory and then executes
 the various ruby files in it, which are unit tests. The first test fails in the
 ./about\_basics.rb file on line 10. Here is what that file looks like: 
 
-![Ruby Koan 1](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image4.png)
+![Ruby Koan 1](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image4.png)
 
 You don't really even have to know programming to see what you should do here.
 Just change the false to be true to get your test to pass. Once that is done,
@@ -56,7 +56,7 @@ complexity to expose you the Ruby language.
 Thanks to Leon for sharing this with us and helping to bring us all closer to
 Ruby enlightenment! 
 
-![Ruby Koans session](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image_7.png)
+![Ruby Koans session](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/image_7.png)
 
 (thanks to the [devLink](http://devlink.net) site for the above picture of the
 Ruby Koans session)
@@ -106,7 +106,7 @@ skills were lacking at the time, so I decided to try to communicate with code
 and, seeing as how the lunch box was the closest writing medium I could find, I
 used it. 
 
-![Me writing on a lunch box](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/photo_3.jpg)
+![Me writing on a lunch box](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/photo_3.jpg)
 
 The code snippet below is approximately something like:
 
@@ -120,5 +120,5 @@ The code snippet below is approximately something like:
 I wanted to show how, if the lambda were moved out to its own function, it
 wouldn't be able to access the x variable. 
 
-![Code on a lunch box](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/photo2.jpg)
+![Code on a lunch box](/images/blog/WindowsLiveWriter/AnotheryearanotherdevLinkpart1_94E1/photo2.jpg)
 

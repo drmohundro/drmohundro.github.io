@@ -30,7 +30,7 @@ step.
 
 So what did I do? I opened it of course. Here's what I found in the box:
 
-![The Cr-48 laptops come in the best boxes ever!](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-Box.jpg)
+![The Cr-48 laptops come in the best boxes ever!](/images/blog/2010-12-30-Cr48-Box.jpg)
 
 I knew it was either a Cr-48 laptop or a small, hamster-powered spaceship.
 Considering that I had already read reviews from others who had received the
@@ -45,7 +45,7 @@ and got it hooked up.
 Out of the box, it's a pretty standard black notebook. It's pretty small and
 light, at least compared to my 15 inch laptop, which I like.
 
-![The laptop](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-just-the-laptop.jpg)
+![The laptop](/images/blog/2010-12-30-Cr48-just-the-laptop.jpg)
 
 As you can see, there aren't any logos on top or anything. The laptop has an
 interesting finish - it almost feels like soft plastic or something. I don't
@@ -61,27 +61,27 @@ by the built-in webcam - pretty easy. If you've got any Chrome syncing set up,
 your Chrome extensions, bookmarks and whatever else is set up to be synced
 will be pulled in.
 
-![It even has a webcam on it!](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-webcam.jpg)
+![It even has a webcam on it!](/images/blog/2010-12-30-Cr48-webcam.jpg)
 
 It found our wireless at work without any problems so I was online quickly. As
 an aside, the pilot laptops come with a free 100 MB plan with Verizon if a
 wireless access point isn't available.
 
-![The first site I visited was mine, of course](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-open-to-my-website.jpg)
+![The first site I visited was mine, of course](/images/blog/2010-12-30-Cr48-open-to-my-website.jpg)
 
 The browsing experience is pretty much just like using the Chrome browser. The
 biggest difference is you can't switch to a different application. You've got
 Chrome... full-screen. That's it. You can have multiple Chrome windows open,
 sure, but it feels more like separate tab groups to me.
 
-![The preferences/setup/toolbar menu](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-setup-menu.jpg)
+![The preferences/setup/toolbar menu](/images/blog/2010-12-30-Cr48-setup-menu.jpg)
 
 OS related settings can all be found under the wrench toolbar button - which
 is almost identical to what the Chrome browser has. In fact, I see two
 differences: 1) "About Google Chrome" is called "About Chrome OS" instead and
 2) "Exit" is "Sign out". That's it.
 
-![The settings in Chrome OS](https://s3.amazonaws.com/mohundro/blog/2010-12-30-Cr48-settings.jpg)
+![The settings in Chrome OS](/images/blog/2010-12-30-Cr48-settings.jpg)
 
 The actual settings in Chrome OS open up in a separate tab and include a few
 more settings than the browser does, but mostly they're related to the

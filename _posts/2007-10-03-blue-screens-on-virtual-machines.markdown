@@ -5,7 +5,7 @@ date: 2007/10/03
 category: blog
 ---
 
-![Windows 2000 BSOD](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/Bluescreensonvirtualmachines_88F8/image.png)  
+![Windows 2000 BSOD](/images/blog/WindowsLiveWriter/Bluescreensonvirtualmachines_88F8/image.png)  
 
 \*sigh\*
 

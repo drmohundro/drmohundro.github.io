@@ -52,11 +52,11 @@ using (Mutex mtx = new Mutex(false, "MyAwesomeMutex", out createdNew))
 
 Great, now when I run my app twice, the second one is blocking on the WaitOne call. Cool. You can even tell in the below screenshot, because the button's paint event is blocked and is whiting out (like Solitaire does when you win!).
 
-![Mutex Test App not painting](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SimpletutorialonSy.Mutexfordummieslikeme_DE3C/image_6.png)
+![Mutex Test App not painting](/images/blog/WindowsLiveWriter/SimpletutorialonSy.Mutexfordummieslikeme_DE3C/image_6.png)
 
 Let's click okay and see if the second form gets the mutex, thus displaying the message. That's weird - the form still isn't responding. Let's close the first form.
 
-![Test App crashing](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SimpletutorialonSy.Mutexfordummieslikeme_DE3C/image_8.png)
+![Test App crashing](/images/blog/WindowsLiveWriter/SimpletutorialonSy.Mutexfordummieslikeme_DE3C/image_8.png)
 
 Ouch! That was unexpected. What? Abandoned mutex? This sounds like I never even released the mutex. Hmmm... [ReleaseMutex](http://msdn2.microsoft.com/en-us/library/system.threading.mutex.releasemutex.aspx)? Shouldn't that be called from the Dispose (end of the Using block)? Might as well try it.
 

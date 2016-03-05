@@ -13,7 +13,7 @@ If you haven't yet read [Graeme Christie's blog post regarding ASP.NET vNext on 
 
 I followed Graeme's instructions and ended up getting Mono 3.4.1 set up on my MacBook Pro in OSX. I figured I'd test this new version in a completely new environment. Once that was done, I got kvm set up and created my first Hello World, which you can see below.
 
-![ASP.NET vNext Hello World](https://s3.amazonaws.com/mohundro/blog/2014-05-29-aspnet-vnext-hello-world.png)
+![ASP.NET vNext Hello World](/images/blog/2014-05-29-aspnet-vnext-hello-world.png)
 
 With that done, I wanted to dig a little deeper... you know, find out just what assemblies are loaded and so on. I ended up writing the below application to try some things out:
 

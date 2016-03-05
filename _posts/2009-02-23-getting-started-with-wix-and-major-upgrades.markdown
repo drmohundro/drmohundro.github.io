@@ -24,7 +24,7 @@ which, even though it is in beta, is plenty stable (IMHO) and supports Visual
 Studio with a project template and intellisense support via schema files. It
 also makes the building step a lot easier.
 
-![WiX New Project](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/GettingstartedwithWiXandMajorUpgrades_BFD6/image_2.png)
+![WiX New Project](/images/blog/WindowsLiveWriter/GettingstartedwithWiXandMajorUpgrades_BFD6/image_2.png)
 
 ## My First WiX Project
 
@@ -69,7 +69,7 @@ see these tables for any MSI. (FYI, you'll find your Product Id Guid if you
 look under `\\HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\` after
 installation.)
 
-![Orca's view of an MSI](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/GettingstartedwithWiXandMajorUpgrades_BFD6/image_4.png)
+![Orca's view of an MSI](/images/blog/WindowsLiveWriter/GettingstartedwithWiXandMajorUpgrades_BFD6/image_4.png)
 
 ## You Can Refactor WiX, Too
 

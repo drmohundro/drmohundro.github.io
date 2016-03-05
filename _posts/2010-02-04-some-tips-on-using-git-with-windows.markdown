@@ -43,7 +43,7 @@ After the install, you can verify things are set up correctly by pulling up
 powershell and typing get-command git. If everything was installed correctly,
 you should see something like this: 
 
-![Get-Command git](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_2.png)
+![Get-Command git](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_2.png)
 
 You can now type `git --version` to verify that the install worked. Mine
 outputs "git version 1.6.5.1.msysgit.1". 
@@ -59,7 +59,7 @@ of this [adding fonts to the registry so that cmd.exe can use Consolas
 mess](http://www.google.com/search?q=cmd.exe%20consolas). Here's what mine
 looks like: 
 
-![Console2](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_4.png)
+![Console2](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_4.png)
 
 I've customized my colors so that the black is more of a dark gray and some of
 the other colors aren't quite as bold. I've changed my font to Consolas, I've
@@ -76,11 +76,11 @@ just show you a couple screenshots for comparison.
 
 Without color...
  
-![Without color](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_8.png)  
+![Without color](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_8.png)  
 
 With color! 
 
-![With color!](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_10.png)  
+![With color!](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_10.png)  
 
 Now, if you've used git, you may be aware of the git config option (or see
 ~/.gitconfig) to turn color on. I actually have mine set to auto. This means
@@ -105,11 +105,11 @@ Here's how this changes things...
 
 Before: 
 
-![Before the ENV variables](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_16.png)
+![Before the ENV variables](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_16.png)
 
 After! 
 
-![After the ENV variables](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_18.png)
+![After the ENV variables](/images/blog/WindowsLiveWriter/SometipsonusinggitwithWindows_BECE/image_18.png)
 
 It's pretty clear now what's changed.
 

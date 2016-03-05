@@ -96,7 +96,7 @@ If you wish to see all of the gems installed locally, just run:
 
 After installing Sinatra, you should see at least the following gems installed: 
 
-![igem list --local](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_6.png)
+![igem list --local](/images/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_6.png)
 
 > NOTE: If you happen to be at work and are behind a proxy, you might have
 > trouble with the gem install command. Ruby and RubyGems take the Unix/Linux
@@ -153,7 +153,7 @@ To run your code in sinatra, you use the ir command (ir = IronRuby) against
 your Ruby source file. You should see something like the following when you run
 it:
 
-![ir .\myironrubyapp.rb](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_5.png)
+![ir .\myironrubyapp.rb](/images/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_5.png)
 
 In case you missed it from the screenshot, sinatra outputs that it "has taken
 the stage on 4567 for development." 4567 is the port that sinatra is listening
@@ -161,7 +161,7 @@ on. This means you can browse to http://localhost:4567.
 
 You should see something like the following when you browse to this address.
 
-![Sinatra Running!](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_9.png)
+![Sinatra Running!](/images/blog/WindowsLiveWriter/SimpleSinatraexampleusingIronRuby_8831/image_9.png)
 
 So, there you go. Your first Sinatra app with IronRuby. If there is interest,
 I'll share more about how you can use Sinatra including how to use ERB to have

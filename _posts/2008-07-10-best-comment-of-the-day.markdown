@@ -7,7 +7,7 @@ category: blog
 
 I was going through some code today and stumbled across the following: 
 
-![Mmmmm... that was a good exception](https://s3.amazonaws.com/mohundro/blog/WindowsLiveWriter/Bestcommentoftheday_8EDF/image_2.png)
+![Mmmmm... that was a good exception](/images/blog/WindowsLiveWriter/Bestcommentoftheday_8EDF/image_2.png)
 
 Hilarious.
 
