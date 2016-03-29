@@ -19,7 +19,7 @@ I'm an occasional speaker. I've presented quite a few presentations on
 PowerShell to .NET User Groups in the area as well as topics such as
 JavaScript.
 
-I'm a Christian, a husband, and a father. I've got two daughters, one by
+I'm a Christian, a husband, and a father. I've got three daughters, two by
 [birth](/blog/2011/06/24/introducing-daila-joy/) and one by
 [adoption](/blog/2014/04/01/adoption-and-my-second-daughter/). I like
 [video games](http://doctormo.tumblr.com/), movies, books, and
