@@ -13,7 +13,7 @@ First, the GitHub statistics: SWXMLHash has over 350 stars on Github. There have
 
 In addition, it is included in over 600 app installs (per the [statistics on CocoaPods](https://cocoapods.org/pods/SWXMLHash) - I have no idea if this number includes both iOS and Mac apps or not). Needless to say, I *never* imagined that a simple XML parsing library would have that much attention, particularly in the day and age of JSON.
 
-The most well-known app that I'm aware of that is using SWXMLHash is the [Firefox iOS application](https://github.com/mozilla/firefox-ios). [Their master branch](https://github.com/mozilla/firefox-ios/blob/master/Cartfile#L12) is currently referencing a fork with some minor changes to it.
+The most well-known app that I'm aware of that is using SWXMLHash is the [Firefox iOS application](https://github.com/mozilla/firefox-ios). [See their Cartfile](https://github.com/mozilla/firefox-ios/blob/da61c695d4e72ec620d34b60863cd8d680885e8c/Cartfile#L9) for details.
 
 ## Some Thoughts
 
