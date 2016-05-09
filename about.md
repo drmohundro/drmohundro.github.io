@@ -9,15 +9,17 @@ permalink: /about/
 My name is David, but a lot of people call me Mo. It comes from my last
 name... **Mo**hundro. You get it, right?
 
-I'm a software developer/artisan/craftsman/engineer living in the Memphis,
-TN area. I write in C# for a living, but I also write Ruby for fun. I'm a big
-fan of JavaScript and PowerShell, too. I use Vim for all of my code editing
-needs. I use Windows and OS X quite a bit and enjoy dabbling in Linux
-occasionally. I like technology. Use what works for you!
+I'm a software developer/artisan/craftsman/engineer/architect working at [Clear
+Function](http://clearfunction.com/) in the Memphis, TN area. I mostly write in
+either C# or Ruby but I try to work with a wide variety of languages and
+technologies. I'm a big fan of Swift, JavaScript and PowerShell, too.  I use
+Vim (or at least something with good Vim keybindings) for all of my code
+editing needs. I use both Windows and OS X quite a bit and enjoy dabbling in
+Linux occasionally. I like technology.  Use what works for you!
 
 I'm an occasional speaker. I've presented quite a few presentations on
 PowerShell to .NET User Groups in the area as well as topics such as
-JavaScript.
+JavaScript. I've also presented on Swift and .NET multithreading.
 
 I'm a Christian, a husband, and a father. I've got three daughters, two by
 [birth](/blog/2011/06/24/introducing-daila-joy/) and one by
