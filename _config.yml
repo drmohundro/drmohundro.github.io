@@ -23,4 +23,4 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-gems: [jekyll-sitemap, jekyll-paginate, jekyll-seo-tag]
+plugins: [jekyll-sitemap, jekyll-paginate, jekyll-seo-tag]
