@@ -3,6 +3,7 @@ layout: post
 title: "BindingList - data binding the way you would expect in .NET 2.0!"
 date: 2006/06/30
 category: blog
+redirect_from: '/blog/2006/06/30/bindinglist---data-binding-the-way-you-would-expect-in-net-20/'
 ---
 
 If anyone out there knew about the BindingList before today, I sure wish one of you would have told me. Now I know, if you had known I was looking for something like the BindingList, you would have told me, but still...

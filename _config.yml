@@ -9,7 +9,7 @@ twitter:
   username: drmohundro
 
 twitter_username: drmohundro
-github_username:  drmohundro
+github_username: drmohundro
 google_analytics_tracking_id: UA-3973340-1
 disqus_short_name: mohundro
 
@@ -23,4 +23,8 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-plugins: [jekyll-sitemap, jekyll-paginate, jekyll-seo-tag]
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -3,6 +3,7 @@ layout: post
 title: "Real world walkthrough with WinDbg"
 date: 2008/05/23
 category: blog
+redirect_from: '/blog/2008/05/23/RealWorldWalkthroughWithWinDbg.aspx.html'
 ---
 
 Most of the work I currently do (during the day) is with WinForms applications
