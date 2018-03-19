@@ -29,7 +29,7 @@ Also, below are some other references that I mentioned:
   * [Implementing a simple ForEachAsync](http://blogs.msdn.com/b/pfxteam/archive/2012/03/04/10277325.aspx)
   * [Implementing a simple ForEachAsync, part 2](http://blogs.msdn.com/b/pfxteam/archive/2012/03/05/10278165.aspx)
 * JavaScript notes (language parallels with C# development)
-  * [Task.js](http://taskjs.org/)
+  * [Task.js](https://github.com/mozilla/task.js)
   * [Async Proposal for ES7](https://github.com/lukehoban/ecmascript-asyncawait)
     (this is usable with [BabelJS](https://babeljs.io) if you
     [enable experimental support](https://babeljs.io/docs/advanced/transformers/#es7-experimental-))
