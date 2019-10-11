@@ -1,0 +1,45 @@
+/**
+ * basic dark mode support (via prefers-color-scheme: dark)
+ */
+
+@media (prefers-color-scheme: dark) {
+  $dark-text-color: #e4e4e4;
+  $dark-background: #444;
+  $dark-link-color: #7aa3c8;
+  $dark-default-code-background: #272822;
+
+  body {
+    background-color: $dark-background;
+    color: $dark-text-color;
+  }
+  a {
+    color: $dark-link-color;
+
+    &:visited {
+      color: lighten($dark-link-color, 15%);
+    }
+
+    &:hover {
+      color: $dark-text-color;
+      text-decoration: underline;
+    }
+  }
+  .site-nav {
+    .page-link {
+      color: white;
+    }
+  }
+  .site-title {
+    &,
+    &:visited {
+      color: white;
+    }
+  }
+  img {
+    filter: grayscale(30%);
+  }
+  pre,
+  code {
+    background-color: $dark-default-code-background;
+  }
+}
