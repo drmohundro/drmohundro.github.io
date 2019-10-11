@@ -7,6 +7,7 @@
   $dark-background: #444;
   $dark-link-color: #7aa3c8;
   $dark-default-code-background: #272822;
+  $dark-text-color: white;
 
   body {
     background-color: $dark-background;
@@ -26,13 +27,28 @@
   }
   .site-nav {
     .page-link {
-      color: white;
+      color: $dark-text-color;
     }
-  }
-  .site-title {
+
+    @include media-query($on-palm) {
+      background-color: $dark-background;
+
+      .menu-icon {
+        > svg {
+          path {
+            fill: $dark-text-color;
+          }
+        }
+      }
+    }
+
+    .site-title {
+      background-color: $dark-background;
+    }
+
     &,
     &:visited {
-      color: white;
+      color: $dark-text-color;
     }
   }
   img {
