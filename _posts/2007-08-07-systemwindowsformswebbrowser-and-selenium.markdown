@@ -9,7 +9,7 @@ I work with the WebBrowser control that was introduced in .NET 2.0 (as well as t
 
 Because we're not running some of our web pages in Internet Explorer but in a custom web browser, unit testing frameworks like Watir and Watin won't work for us. They make use of the Internet Explorer COM application. Unless we want to fork one of those frameworks as well as provide an automation interface into our custom browser, I don't see either of those frameworks working for us. 
 
-However, [Selenium](http://www.openqa.org/selenium/) will work fine! 
+However, [Selenium](https://selenium.dev/) will work fine! 
 
 Selenium runs *in the browser*! 
 
