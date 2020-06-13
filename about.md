@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-<img src="/images/me.png" alt="It's a picture of me." class="photo" />
+<img src="/images/me.jpg" alt="It's a picture of me." class="photo" />
 
 My name is David, but a lot of people call me Mo. It comes from my last
 name... **Mo**hundro. You get it, right?
