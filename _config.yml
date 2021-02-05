@@ -11,7 +11,6 @@ twitter:
 twitter_username: drmohundro
 github_username: drmohundro
 google_analytics_tracking_id: UA-3973340-1
-disqus_short_name: mohundro
 
 paginate: 10
 paginate_path: "/blog/page:num/"
